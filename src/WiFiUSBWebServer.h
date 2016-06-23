@@ -3,8 +3,9 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-#include <ESP6266mDNS.h>
-#include <USBPower.h>
+#include <ESP8266mDNS.h>
+#include "USBPower.h"
+#include "config.h"
 
 /**
 * Manage the web server
@@ -24,7 +25,7 @@ public:
     *
     *
     */
-    void begin (const char* domain);
+    void begin ();
     
     
     /**

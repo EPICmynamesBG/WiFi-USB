@@ -8,28 +8,28 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
-#include <src/USBPower.h>
-#include <src/WiFiUSBWebServer.h>
-
-#define SSID                "XCast"
-#define SSID_PASSWORD       "XCast2016"
-#define WEBSERVER_DOMAIN    "wifiusb" //without the .local ending
+#include "src/config.h"
+#include "src/USBPower.h"
+#include "src/WiFiUSBWebServer.h"
 
 void setup() {
     Serial.begin(115200);
     Serial.print("\n\n");
+
+    pinMode(USB_PIN, OUTPUT);
+    digitalWrite(USB_PIN, 0);
     
-    printMACAddress();
+    printMacAddress();
     establishWirelessConnection();
     printWirelessInfo();
     
-    WiFiUSBWebServer.begin();
+    WebServer.begin();
     
 }
 
 void loop() {
     
-    WiFiUSBWevServer.handleClients();
+    WebServer.handleClients();
     
 }
 
@@ -64,11 +64,13 @@ void printWirelessInfo() {
 }
 
 void establishWirelessConnection() {
+    
+    Serial.print("\n\nEstablishing a wireless connection to " + String(SSID) + "\n");
     WiFi.begin(SSID, SSID_PASSWORD);
-    Serial.print("\n\nEstablishing a wireless connection to " + SSID + "\n");
-    while (WiFi.status() !+ WL_CONNECTED) {
+    
+    while (WiFi.status() != WL_CONNECTED) {
         delay(1000);
         Serial.print(".");
     }
-    Serial.print("\nConnected to " + SSID);
+    Serial.println("Connected to " + String(SSID));
 }

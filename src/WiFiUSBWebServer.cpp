@@ -1,21 +1,18 @@
 #include "WiFiUSBWebServer.h"
 
-#define WEBSERVER_DOMAIN    "wifiusb" //without the .local ending
+//#define WEBSERVER_DOMAIN "wifiusb" //without the .local ending
 
-WiFiUSBWebServer::WiFiUSBWebServer() {
-    ESP8266WebServer server = server(80);
-    USBPower powerManager = USBPower();
-}              
+WiFiUSBWebServer::WiFiUSBWebServer() 
+    : server(80) { };
+            
 
-void WiFiUSBWebServer::begin(const char* domain) {
+void WiFiUSBWebServer::begin() {
     
-    mdns.begin(domain, WiFi.localIP());
-    
-    SPIFFS.begin();
+    mdns.begin(WEBSERVER_DOMAIN, WiFi.localIP());
     
     server.on("/", [this]() {
-        String response = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<!DOCTYPE HTML>\r\n<html><body><h1>Welcome to WiFi USB v1</h1></body></html>";
-        server.send(response);
+        String response = "<!DOCTYPE HTML>\r\n<html><body><h1>Welcome to WiFi USB v0.1</h1></body></html>";
+        server.send(200, "text/html", response);
     });
     
     server.on("/status", HTTP_GET, [this] {
@@ -31,7 +28,7 @@ void WiFiUSBWebServer::begin(const char* domain) {
     });
     
     server.begin();
-    Serial.println("Web server is running at http://" + String(domain) + ".local");
+    Serial.println("Web server is running at http://" + String(WEBSERVER_DOMAIN) + ".local");
 }
 
 void WiFiUSBWebServer::handleClients() {
@@ -56,6 +53,7 @@ void WiFiUSBWebServer::handleToggle() {
     powerManager.togglePower();
     bool isOn = powerManager.isOn();
     int raw = powerManager.rawValue();
+    String description = "";
     
     if (isOn) {    
         description = "USB device has been powered on";
@@ -76,12 +74,15 @@ void WiFiUSBWebServer::handleReboot() {
 
 String WiFiUSBWebServer::buildJSON(bool isOn, int rawValue, String description) {
     String json = "{";
+    String boolString = isOn ? "true" : "false";
     
-    json.concat("\"on\":" + String(isOn));
-    json.concat("\"raw\":" + String(rawValue));
-    json.concat("\description\":" + description);
+    json.concat("\"on\":" + boolString + ", ");
+    json.concat("\"raw\":" + String(rawValue) + ", ");
+    json.concat("\"description\": \"" + description  + "\"");
     
     json.concat("}");
     
     return json;
 }
+
+WiFiUSBWebServer WebServer;

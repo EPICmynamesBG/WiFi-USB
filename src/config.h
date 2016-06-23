@@ -1,5 +1,9 @@
-#define SSID    "XCast"
+#pragma once
 
-#define SSID_PASSWORD   "XCast2016"
+#define SSID "YOUR-WIFI-NAME"
 
-#define WEBSERVER_DOMAIN    "wifiusb" //without the .local ending
+#define SSID_PASSWORD "YOUR-WIFI-PASSWORD"
+
+#define WEBSERVER_DOMAIN "wifiusb" //without the .local ending
+
+#define USB_PIN 2 // the pin that controls USB power

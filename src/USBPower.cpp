@@ -1,6 +1,6 @@
 #include "USBPower.h"
-
-#define USB_PIN     2
+#include "config.h"
+#include <Arduino.h>
 
 USBPower::USBPower () {
     //init? do something?
@@ -10,7 +10,7 @@ USBPower::USBPower () {
 /**
 * Returns 0 if on, 1 if off
 */
-int USBPower::currentStatus() {
+int USBPower::rawValue() {
     
     int statusInt = digitalRead(USB_PIN);
     Serial.println("Current power status: " + String(statusInt));
@@ -20,16 +20,16 @@ int USBPower::currentStatus() {
 bool USBPower::isOn() {
     int statusInt = digitalRead(USB_PIN);
     bool statusBool = statusInt == 0 ? true : false;
-    Serial.println("Power is on: " + String(statusBool));
+    Serial.println("Power is on: " + String(statusBool ? "true":"false"));
     return statusBool;
 }
 
 void USBPower::togglePower() {
-    int statusInt = digitalRead(USB_PIN);
-    if (statusInt == 0) {
-        turnOn();
-    } else {
+
+    if (isOn()) {
         turnOff();
+    } else {
+        turnOn();
     }
 }
 
@@ -42,3 +42,5 @@ void USBPower::turnOff() {
     digitalWrite(USB_PIN, 1);
     Serial.println("Turning off USB");
 }
+
+USBPower powerManager;
