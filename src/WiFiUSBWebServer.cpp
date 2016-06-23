@@ -36,32 +36,31 @@ void WiFiUSBWebServer::handleClients() {
 }
 
 void WiFiUSBWebServer::handleStatus() {
-    bool isOn = powerManager.isOn();
+
     int raw = powerManager.rawValue();
     String description = "";
-    if (isOn) {    
+    if (isOn()) {    
         description = "USB device is powererd on";
     } else {
         description = "USB device is currently off";
     }
     
-    String json = buildJSON(isOn, raw, description);
+    String json = buildJSON(raw, description);
     server.send(200, "application/json", json);
 }
 
 void WiFiUSBWebServer::handleToggle() {
     powerManager.togglePower();
-    bool isOn = powerManager.isOn();
     int raw = powerManager.rawValue();
     String description = "";
     
-    if (isOn) {    
+    if (isOn()) {    
         description = "USB device has been powered on";
     } else {
         description = "USB device has been powered off";
     }
     
-    String json = buildJSON(isOn, raw, description);
+    String json = buildJSON(raw, description);
     server.send(200, "application/json", json);
 }
 
@@ -72,9 +71,9 @@ void WiFiUSBWebServer::handleReboot() {
     ESP.restart();
 }
 
-String WiFiUSBWebServer::buildJSON(bool isOn, int rawValue, String description) {
+String WiFiUSBWebServer::buildJSON(int rawValue, String description) {
     String json = "{";
-    String boolString = isOn ? "true" : "false";
+    String boolString = isOn() ? "true" : "false";
     
     json.concat("\"on\":" + boolString + ", ");
     json.concat("\"raw\":" + String(rawValue) + ", ");

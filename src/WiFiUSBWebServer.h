@@ -40,7 +40,7 @@ private:
     void handleReboot();
     void handleStatus();
     void handleToggle();
-    String buildJSON(bool isOn, int rawValue, String description);
+    String buildJSON(int rawValue, String description);
     
     MDNSResponder mdns;
     ESP8266WebServer server;
