@@ -1,6 +1,5 @@
 #include "WiFiUSBWebServer.h"
-
-//#define WEBSERVER_DOMAIN "wifiusb" //without the .local ending
+#include "config.h"
 
 WiFiUSBWebServer::WiFiUSBWebServer() 
     : server(80) { };
@@ -11,7 +10,7 @@ void WiFiUSBWebServer::begin() {
     mdns.begin(WEBSERVER_DOMAIN, WiFi.localIP());
     
     server.on("/", [this]() {
-        String response = "<!DOCTYPE HTML>\r\n<html><body><h1>Welcome to WiFi USB v0.1</h1></body></html>";
+        String response = "<!DOCTYPE HTML>\r\n<html><body><h1>Welcome to WiFi USB v1.0 [firmware]</h1></body></html>";
         server.send(200, "text/html", response);
     });
     
@@ -39,7 +38,7 @@ void WiFiUSBWebServer::handleStatus() {
 
     int raw = powerManager.rawValue();
     String description = "";
-    if (isOn()) {    
+    if (powerManager.isOn()) {    
         description = "USB device is powererd on";
     } else {
         description = "USB device is currently off";
@@ -54,7 +53,7 @@ void WiFiUSBWebServer::handleToggle() {
     int raw = powerManager.rawValue();
     String description = "";
     
-    if (isOn()) {    
+    if (powerManager.isOn()) {    
         description = "USB device has been powered on";
     } else {
         description = "USB device has been powered off";
@@ -73,7 +72,7 @@ void WiFiUSBWebServer::handleReboot() {
 
 String WiFiUSBWebServer::buildJSON(int rawValue, String description) {
     String json = "{";
-    String boolString = isOn() ? "true" : "false";
+    String boolString = powerManager.isOn() ? "true" : "false";
     
     json.concat("\"on\":" + boolString + ", ");
     json.concat("\"raw\":" + String(rawValue) + ", ");

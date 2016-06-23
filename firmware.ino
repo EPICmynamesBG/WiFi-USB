@@ -5,19 +5,13 @@
 */
 
 #include <ESP8266WiFi.h>
-#include <DNSServer.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266mDNS.h>
 #include "src/config.h"
 #include "src/USBPower.h"
 #include "src/WiFiUSBWebServer.h"
 
 void setup() {
-    Serial.begin(115200);
-    Serial.print("\n\n");
-
-    pinMode(USB_PIN, OUTPUT);
-    digitalWrite(USB_PIN, 0);
+    
+    initialize();
     
     printMacAddress();
     establishWirelessConnection();
@@ -31,6 +25,17 @@ void loop() {
     
     WebServer.handleClients();
     
+}
+
+/**
+* Setup Serial printing and GPIO pins
+*/
+void initialize() {
+    Serial.begin(115200);
+    Serial.print("\n\n");
+
+    pinMode(USB_PIN, OUTPUT);
+    digitalWrite(USB_PIN, 0);
 }
 
 /**
