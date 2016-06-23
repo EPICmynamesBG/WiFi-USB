@@ -1,14 +1,18 @@
 # WiFi-USB #
 Version 1.0
-======
 
-### A wirelessly controller USB power port ###
+### A wirelessly controlled USB power port ###
 
 ---
 
 ## Introduction ##
 
-## Hardwaree ##
+TODO
+
+## Hardware ##
+
+TODO
 
 ## Credits ##
 
+(Alex Cordonnier)[https://github.com/ajcord] - for designing the board and helping me troubelshoot every step of the way!
