@@ -29,7 +29,7 @@ public:
     
     
     /**
-    * Handles incomding connections.
+    * Handles incoming connections.
     *
     * **Call within main loop
     */
