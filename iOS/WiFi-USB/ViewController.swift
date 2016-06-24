@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
 
     /// Used to control backgrond color change timing
     private var backgroundTimer: NSTimer?
@@ -17,8 +17,13 @@ class ViewController: UIViewController {
     /// Current index in array of background colors
     private var currentColorIndex: Int = 0
     
+    private var networker: WiFiUSBNetworker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.networker = WiFiUSBNetworker()
+        self.networker?.delegate = self
         
     }
     
@@ -29,6 +34,7 @@ class ViewController: UIViewController {
                                                                       selector: #selector(ViewController.animateBackground),
                                                                       userInfo: nil,
                                                                       repeats: true)
+        self.networker?.getStatus()
         
     }
     
@@ -54,6 +60,16 @@ class ViewController: UIViewController {
         }) { (complete: Bool) in
             self.currentColorIndex = (self.currentColorIndex + 1) % ColorPalette.BackgroundColorArray.count
         }
+    }
+    
+    /* ----- WiFiUSBNetworkerDelegate Functions ----- */
+    
+    func WiFiUSBStatus(response: JsonResponse) {
+        print(response)
+    }
+    
+    func WiFiUSBRequestError(error: NSError?, message: String?) {
+        print(message)
     }
 
 }
