@@ -2,7 +2,7 @@
 * WiFi-USB: a wirelessly controllable USB power port
 * Author: Brandon Groff
 * Version: 1.0
-* License: Apache License 2.0 (see src/LICENSE)
+* License: Apache License 2.0 (see LICENSE)
 */
 
 #include <ESP8266WiFi.h>
