@@ -27,7 +27,7 @@ _How can I use WiFi-USB?_
 Keep reading below for more on how to build your own WiFi-USB board, and instructions on how to install the firmware to get your device up and running.
 
 ## Hardware ##
----
+
 _Soldering iron and solder required for assembly_
 
 * Custom Board
@@ -37,7 +37,7 @@ _Soldering iron and solder required for assembly_
 * MORE
 
 ## Firmware Install ##
----
+
 
 1. Download and install the [Ardiuno IDE](https://www.arduino.cc/en/Main/Software)
 2. Configure the IDE
@@ -47,7 +47,7 @@ _Soldering iron and solder required for assembly_
 5. Open `firmware.imo` and click upload in the Arduino IDE
 
 ## Using WiFi-USB ##
----
+
 
 The default endpoint for WiFi-USB will be http://wifiusb.local. Going to this page will show you a simple html page, confirming that the wifiusb is running.
 
@@ -74,12 +74,13 @@ _Reboot the device_
 
 
 ## Credits ##
----
+
 
 [Alex Cordonnier](https://github.com/ajcord) - for designing the board and helping me troubleshoot every step of the way!
 
 ## Licenses ##
----
+
 
 [_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
+
 [_firmware.imo & src_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/src/LICENSE) : Apache License 2.0
