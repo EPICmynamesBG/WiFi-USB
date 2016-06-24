@@ -42,7 +42,7 @@ _Soldering iron and solder required for assembly_
 1. Download and install the [Ardiuno IDE](https://www.arduino.cc/en/Main/Software)
 2. Configure the IDE
   * Configuration steps HERE
-3. Download the zip/clone this repo into a folder named 'firmware'
+3. Download the zip/clone this repo
 4. In `config.h` update the SSID and SSID_PASSWORD variables to match your network configuration.
 5. Open `firmware.imo` and click upload in the Arduino IDE
 
@@ -83,4 +83,4 @@ _Reboot the device_
 
 [_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
 
-[_firmware.imo & src_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/src/LICENSE) : Apache License 2.0
+[_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : Apache License 2.0
