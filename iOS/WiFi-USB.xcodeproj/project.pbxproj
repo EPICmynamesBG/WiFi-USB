@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */; };
+		BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D81D1CD6B500C39115 /* JsonResponse.swift */; };
 		BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */; };
 		BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE061D1CBE6100373D28 /* AppDelegate.swift */; };
 		BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE081D1CBE6100373D28 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBNetworker.swift; path = Model/WiFiUSBNetworker.swift; sourceTree = "<group>"; };
+		BC4167D81D1CD6B500C39115 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = Model/JsonResponse.swift; sourceTree = "<group>"; };
 		BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Model/ColorPalette.swift; sourceTree = "<group>"; };
 		BC61EE031D1CBE6100373D28 /* WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC61EE061D1CBE6100373D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 			isa = PBXGroup;
 			children = (
 				BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */,
+				BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */,
+				BC4167D81D1CD6B500C39115 /* JsonResponse.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */,
+				BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */,
 				BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */,
 				BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */,
+				BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
