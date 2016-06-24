@@ -1,9 +1,14 @@
 # WiFi-USB #
-Hardware Version 1.1
-
-Firmware Version 1.0
-
 A wirelessly controllable USB power port
+
+
+_Hardware Version:_ 1.1
+
+_Firmware Version:_ 1.0
+
+_iOS App Version_: 0.1
+
+_Web App Version_: 0.1
 
 ---
 
@@ -65,15 +70,16 @@ _Toggle the USB power on/off_
 
 _Reboot the device_
 * `/reboot` - GET (no parameters)
-  * `description: String` - a textual confirmation that the device is reooting
+  * `description: String` - a textual confirmation that the device is rebooting
 
 
 ## Credits ##
 ---
 
-[Alex Cordonnier](https://github.com/ajcord) - for designing the board and helping me troubelshoot every step of the way!
+[Alex Cordonnier](https://github.com/ajcord) - for designing the board and helping me troubleshoot every step of the way!
 
-## License ##
+## Licenses ##
 ---
 
-TODO
+[_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
+[_firmware.imo & src_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/src/LICENSE) : Apache License 2.0
