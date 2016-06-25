@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC230BD51D1F17DB00FC1CDE /* PowerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC230BD41D1F17DB00FC1CDE /* PowerButton.swift */; };
+		BC230BD71D1F188F00FC1CDE /* WiFiUSBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC230BD61D1F188F00FC1CDE /* WiFiUSBStatus.swift */; };
 		BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */; };
 		BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D81D1CD6B500C39115 /* JsonResponse.swift */; };
+		BC49A42A1D1F257D00C82E0B /* RadialGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */; };
 		BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */; };
 		BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE061D1CBE6100373D28 /* AppDelegate.swift */; };
 		BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE081D1CBE6100373D28 /* ViewController.swift */; };
@@ -18,8 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC230BD41D1F17DB00FC1CDE /* PowerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerButton.swift; path = "UI Components/PowerButton.swift"; sourceTree = "<group>"; };
+		BC230BD61D1F188F00FC1CDE /* WiFiUSBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBStatus.swift; path = Model/WiFiUSBStatus.swift; sourceTree = "<group>"; };
 		BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBNetworker.swift; path = Model/WiFiUSBNetworker.swift; sourceTree = "<group>"; };
 		BC4167D81D1CD6B500C39115 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = Model/JsonResponse.swift; sourceTree = "<group>"; };
+		BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientColor.swift; path = "UI Components/RadialGradientColor.swift"; sourceTree = "<group>"; };
 		BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Model/ColorPalette.swift; sourceTree = "<group>"; };
 		BC61EE031D1CBE6100373D28 /* WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC61EE061D1CBE6100373D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC230BD31D1F179F00FC1CDE /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				BC230BD41D1F17DB00FC1CDE /* PowerButton.swift */,
+				BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */,
+			);
+			name = "UI Components";
+			sourceTree = "<group>";
+		};
 		BC54FB6A1D1CC23700BF1AAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */,
+				BC230BD61D1F188F00FC1CDE /* WiFiUSBStatus.swift */,
 				BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */,
 				BC4167D81D1CD6B500C39115 /* JsonResponse.swift */,
 			);
@@ -70,6 +86,7 @@
 		BC61EE051D1CBE6100373D28 /* WiFi-USB */ = {
 			isa = PBXGroup;
 			children = (
+				BC230BD31D1F179F00FC1CDE /* UI Components */,
 				BC61EE061D1CBE6100373D28 /* AppDelegate.swift */,
 				BC61EE081D1CBE6100373D28 /* ViewController.swift */,
 				BC54FB6A1D1CC23700BF1AAC /* Model */,
@@ -113,6 +130,7 @@
 				TargetAttributes = {
 					BC61EE021D1CBE6100373D28 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2246FUGJ54;
 					};
 				};
 			};
@@ -152,9 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC230BD71D1F188F00FC1CDE /* WiFiUSBStatus.swift in Sources */,
 				BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */,
 				BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */,
 				BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */,
+				BC49A42A1D1F257D00C82E0B /* RadialGradientColor.swift in Sources */,
+				BC230BD51D1F17DB00FC1CDE /* PowerButton.swift in Sources */,
 				BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */,
 				BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */,
 			);

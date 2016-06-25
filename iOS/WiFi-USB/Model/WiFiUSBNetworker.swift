@@ -101,6 +101,7 @@ class WiFiUSBNetworker {
             return
         }
         
+        WiFiUSBStatus.set(parsedResponse!)
         NSOperationQueue.mainQueue().addOperationWithBlock({
             self.delegate?.WiFiUSBStatus(parsedResponse!)
         })

@@ -18,6 +18,8 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
     private var currentColorIndex: Int = 0
     
     private var networker: WiFiUSBNetworker?
+    @IBOutlet weak var togglePowerButton: PowerButton!
+    @IBOutlet weak var rebootButton: PowerButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,8 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
                                                                       userInfo: nil,
                                                                       repeats: true)
         self.networker?.getStatus()
-        
+        self.togglePowerButton.animateGlow()
+        self.rebootButton.animateGlow()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -48,6 +51,8 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     /**
      Animate the change of the view's background color
@@ -55,21 +60,31 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
      - parameter timer: sent by scheduled NSTimer with repeat
      */
     @objc private func animateBackground(timer: NSTimer) {
-        UIView.animateWithDuration(fadeTime, animations: {
-            self.view.backgroundColor = ColorPalette.BackgroundColorArray[self.currentColorIndex]
+        UIView.animateWithDuration(fadeTime, delay: 0, options: .AllowUserInteraction, animations: {
+            self.view.backgroundColor = ColorPalette.Rainbow.Faded.Array[self.currentColorIndex]
         }) { (complete: Bool) in
-            self.currentColorIndex = (self.currentColorIndex + 1) % ColorPalette.BackgroundColorArray.count
+            self.currentColorIndex = (self.currentColorIndex + 1) % ColorPalette.Rainbow.Faded.Array.count
         }
+    }
+    
+    private func sendRebootSignal() {
+        self.networker?.reboot()
+    }
+    
+    private func sendToggleSignal() {
+        self.networker?.togglePower()
     }
     
     /* ----- WiFiUSBNetworkerDelegate Functions ----- */
     
     func WiFiUSBStatus(response: JsonResponse) {
-        print(response)
+        //TODO
     }
     
     func WiFiUSBRequestError(error: NSError?, message: String?) {
-        print(message)
+        let popup = UIAlertController(title: "Network Request Error", message: message, preferredStyle: .Alert)
+        popup.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(popup, animated: true, completion: nil)
     }
 
 }
