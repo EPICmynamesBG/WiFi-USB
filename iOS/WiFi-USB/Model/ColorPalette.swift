@@ -56,6 +56,39 @@ struct ColorPalette {
         SecondaryA.Light,
         SecondaryB.Light
     ]
+    
+    struct Rainbow {
+        struct Faded {
+            static let WhiteBlue: UIColor = UIColor(hex: "EAFFFF")
+            static let Blue: UIColor = UIColor(hex: "94FFFF")
+            static let DeepBlue: UIColor = UIColor(hex: "0794FF")
+            static let Magenta: UIColor = UIColor(hex: "E188FF")
+            static let Purple: UIColor = UIColor(hex: "AA88FF")
+            static let Red: UIColor = UIColor(hex: "FE1C4D")
+            static let SeafoamGreen: UIColor = UIColor(hex: "5ADFA5")
+            static let Green: UIColor = UIColor(hex: "0ADE0D")
+            static let YellowGreen: UIColor = UIColor(hex: "84F11C")
+            static let Cyan: UIColor = UIColor(hex: "35FFEE")
+            
+            static let Array: [UIColor] = [
+                Faded.Green,
+                Faded.WhiteBlue,
+                Faded.Blue,
+                Faded.DeepBlue,
+                Faded.Magenta,
+                Faded.Red,
+                Faded.WhiteBlue,
+                Faded.DeepBlue,
+                Faded.Purple,
+                Faded.WhiteBlue,
+                Faded.Cyan,
+                Faded.SeafoamGreen,
+                Faded.YellowGreen
+            ]
+        }
+        
+        
+    }
 }
 
 private extension UIColor {
@@ -75,6 +108,39 @@ private extension UIColor {
                   green: CGFloat(Double(green) / 255.0),
                   blue: CGFloat(Double(blue) / 255.0),
                   alpha: CGFloat(alpha))
+    }
+    
+    /**
+     Create a color using CSS HEX code
+     
+     - parameter hex: 3 or 6 char color hex code
+     
+     - returns: UIColor, Black if error
+     */
+    convenience init(hex: String) { // "001122" OR "#FFddFF"
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        
+        if (cString.hasPrefix("#")) {
+            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+        }
+        
+        if ((cString.characters.count) != 6) {
+            self.init(red: 0,
+                      green: 0,
+                      blue: 0,
+                      alpha: 1.0)
+            return
+        }
+        
+        var rgbValue:UInt32 = 0
+        NSScanner(string: cString).scanHexInt(&rgbValue)
+        
+        self.init(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
 }
