@@ -2,8 +2,11 @@
 //  WiFiUSBNetworker.swift
 //  WiFi-USB
 //
-//  Created by Brandon Groff on 6/23/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//  Created by Brandon Groff on 6/26/16.
+//
+//  Copyright © 2016 Brandon Groff.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 
 import Foundation
@@ -68,6 +71,11 @@ class WiFiUSBNetworker {
     /// Static var for when a request should timeout (5 seconds)
     private static var RequestTimeoutTime: NSTimeInterval = 5.0
     
+    /**
+     Class initializer
+     
+     - returns: self
+     */
     init () {
         self.currentDataTask = nil
         self.rebooting = false
@@ -138,13 +146,6 @@ class WiFiUSBNetworker {
             self.requestProcessor(data, response: response, error: error)
         }
         self.startDataTask(datatask)
-    }
-    
-    private func beginWiFiUSBOnlineCheckTimer() {
-        
-        if (self.deviceOfflineTimer == nil) {
-            
-        }
     }
     
     /**
@@ -220,11 +221,13 @@ class WiFiUSBNetworker {
         self.requestTimeoutTimer = NSTimer.scheduledTimerWithTimeInterval(WiFiUSBNetworker.RequestTimeoutTime, target: self, selector: #selector(self.requestTimeout), userInfo: nil, repeats: false)
     }
     
+    /**
+     Fired by timer when a request has reached it's time limit, cancel's the current datatask
+     */
     @objc func requestTimeout() {
         self.requestTimeoutTimer?.invalidate()
         self.requestTimeoutTimer = nil
         self.currentDataTask?.cancel()
-        
     }
     
     /**

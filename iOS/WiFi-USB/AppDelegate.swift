@@ -2,8 +2,11 @@
 //  AppDelegate.swift
 //  WiFi-USB
 //
-//  Created by Brandon Groff on 6/23/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//  Created by Brandon Groff on 6/26/16.
+//
+//  Copyright © 2016 Brandon Groff.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 
 import UIKit
