@@ -26,6 +26,13 @@ protocol WiFiUSBNetworkerDelegate {
      - parameter message: optional error description String
      */
     func WiFiUSBRequestError(error: NSError?, message: String?)
+    
+    /**
+     Called when WiFi-USB is back online after a reboot
+     
+     - parameter response: JsonResponse object
+     */
+    func WiFiUSBRebootComplete(statusResponse: JsonResponse)
 }
 
 /// Simplified communications with WiFi-USB
@@ -38,15 +45,30 @@ class WiFiUSBNetworker {
     private let session: NSURLSession = NSURLSession.sharedSession()
     /// the current request in progress, if any
     private var currentDataTask: NSURLSessionDataTask?
+    /// Check back for when WiFi-USB is back online
+    private var postRebootTimer: NSTimer?
+    /// Prevent reboot complete from being called by own request callback
+    private var RebootIgnoreFirstResponseFlag: Bool = false
+    /// Allow all to know if the WiFi-USB device is rebooting
+    var rebooting: Bool = false {
+        didSet {
+            if rebooting {
+                self.RebootIgnoreFirstResponseFlag = true
+            }
+        }
+    }
+    /// Constant for retry time after device has rebooted
+    private static let RebootOnlineCheckTime: NSTimeInterval = 3.0
     
     init () {
         self.currentDataTask = nil
+        self.rebooting = false
     }
     
     /**
      Get the WiFi-USB's current USB-A power status
      */
-    func getStatus () {
+    @objc func getStatus () {
         self.sendRequestToEndpoint("/status", withHTTPMethod: "GET")
     }
     
@@ -61,7 +83,13 @@ class WiFiUSBNetworker {
      Reboot the WiFi-USB
      */
     func reboot () {
+        self.rebooting = true
         self.sendRequestToEndpoint("/reboot", withHTTPMethod: "GET")
+        self.postRebootTimer = NSTimer.scheduledTimerWithTimeInterval(WiFiUSBNetworker.RebootOnlineCheckTime,
+                                                                      target: self,
+                                                                      selector: #selector(self.getStatus),
+                                                                      userInfo: nil,
+                                                                      repeats: true)
     }
     
     /**
@@ -71,6 +99,11 @@ class WiFiUSBNetworker {
      - parameter method:   the HTTP method (GET, POST, etc)
      */
     private func sendRequestToEndpoint (endpoint: String, withHTTPMethod method:String) {
+        if (!Reachability.isConnectedToNetwork()) {
+            self.delegate?.WiFiUSBRequestError(nil, message: "This device isn't connected to any networks")
+            return
+        }
+        
         let url = NSURL(string: BASE_URL + endpoint)
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = method
@@ -82,7 +115,7 @@ class WiFiUSBNetworker {
     }
     
     /**
-     Processes the network response data and fires success/failure delegates as determined
+     Processes the network response data
      
      - parameter data:     recieved NSData
      - parameter response: recieved NSURLResponse
@@ -101,19 +134,35 @@ class WiFiUSBNetworker {
             return
         }
         
-        WiFiUSBStatus.set(parsedResponse!)
-        NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.delegate?.WiFiUSBStatus(parsedResponse!)
-        })
-        self.dataTaskComplete()
+        
+        self.dataTaskComplete(parsedResponse!)
     }
     
     /**
-     Clear the current data task on success/failure
+     Clear the current data task and fire appropriate delegate
      */
-    private func dataTaskComplete () {
+    private func dataTaskComplete (response: JsonResponse) {
         self.currentDataTask = nil
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        if self.RebootIgnoreFirstResponseFlag {
+            self.RebootIgnoreFirstResponseFlag = false
+        } else {
+            if (self.postRebootTimer != nil) {
+                self.postRebootTimer?.invalidate()
+                self.postRebootTimer = nil
+            }
+            if (rebooting) {
+                rebooting = false
+                NSOperationQueue.mainQueue().addOperationWithBlock({
+                    self.delegate?.WiFiUSBRebootComplete(response)
+                })
+                return
+            }
+        }
+        
+        NSOperationQueue.mainQueue().addOperationWithBlock({
+            self.delegate?.WiFiUSBStatus(response)
+        })
     }
     
     /**
@@ -166,7 +215,7 @@ class WiFiUSBNetworker {
         NSOperationQueue.mainQueue().addOperationWithBlock { 
             self.delegate?.WiFiUSBRequestError(error, message: message)
         }
-        self.dataTaskComplete()
+        self.currentDataTask = nil
     }
     
 }
