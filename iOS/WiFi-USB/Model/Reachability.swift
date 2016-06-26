@@ -3,12 +3,19 @@
 //  WiFi-USB
 //
 //  Created by Brandon Groff on 6/26/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 
 import SystemConfiguration
 
+/// Class for determining if this device is online
 public class Reachability {
+    /**
+     simply determine if this device has a network connection
+     
+     - returns: Bool
+     */
     class func isConnectedToNetwork() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))

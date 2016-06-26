@@ -2,8 +2,11 @@
 //  ColorPalette.swift
 //  WiFi-USB
 //
-//  Created by Brandon Groff on 6/23/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//  Created by Brandon Groff on 6/26/16.
+//
+//  Copyright © 2016 Brandon Groff.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 //  Color Palette by Paletton.com
 //  Palette URL: http://paletton.com/#uid=61S0u0kEDuWniE+u3DHG+oOL9jc
@@ -70,6 +73,7 @@ struct ColorPalette {
             static let YellowGreen: UIColor = UIColor(hex: "84F11C")
             static let Cyan: UIColor = UIColor(hex: "35FFEE")
             
+            /// array used for background animation
             static let Array: [UIColor] = [
                 Faded.Green,
                 Faded.WhiteBlue,

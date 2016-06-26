@@ -3,17 +3,23 @@
 //  WiFi-USB
 //
 //  Created by Brandon Groff on 6/26/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//  
+//  Copyright © 2016 Brandon Groff.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 
 import UIKit
 
+/// Custom implementation of a Toast type notification
 class NotificationLabel: UILabel {
     
+    /// How long to show the notification
     private var tempShowingTime: NSTimeInterval? = nil
+    /// The timer that controls when to hide the notification
     private var showTimer: NSTimer?
-    private var showing: Bool = false
     
+    /// Custom hide implementation. Fade in/out and slide up on show
     override var hidden: Bool {
         didSet {
             if (self.hidden) {
@@ -24,6 +30,11 @@ class NotificationLabel: UILabel {
         }
     }
     
+    /**
+     Get the y coordinate of the parent views bottom, 200 (random) if nil
+    
+     - returns: the parent views height, CGFloat
+     */
     private func parentBottom () -> CGFloat{
         if (self.superview?.frame.size.height != nil) {
             return self.superview!.frame.size.height
@@ -32,6 +43,9 @@ class NotificationLabel: UILabel {
         return 200.0
     }
     
+    /**
+     Fade out animation
+     */
     @objc private func fadeOut() {
         self.alpha = 0.8
         UIView.animateWithDuration(1.0, delay: 0, options: .CurveEaseInOut, animations: {
@@ -48,6 +62,9 @@ class NotificationLabel: UILabel {
 
     }
     
+    /**
+     Fade in animation, with slide up from bottom
+     */
     private func fadeIn() {
         
         self.alpha = 0.0
@@ -70,6 +87,11 @@ class NotificationLabel: UILabel {
         
     }
     
+    /**
+     Show this notification label for time duration
+     
+     - parameter time: time duration to show the notification
+     */
     func showForDuration(time: NSTimeInterval) {
         if (self.showTimer != nil) {
             self.showTimer?.invalidate()
@@ -79,11 +101,21 @@ class NotificationLabel: UILabel {
         self.hidden = false
     }
     
+    /**
+     Override UILabel default to give text extra padding
+     
+     - parameter rect: CGRect
+     */
     override func drawTextInRect(rect: CGRect) {
         let insets = UIEdgeInsets.init(top: 5, left: 10, bottom: 5, right: 10)
         super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
     }
     
+    /**
+     Override UILabel default to give text extra padding
+     
+     - returns: CGSize
+     */
     override func intrinsicContentSize() -> CGSize {
         var origSize = super.intrinsicContentSize()
         origSize.width = origSize.width + 20

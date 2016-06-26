@@ -2,15 +2,20 @@
 //  PowerButton.swift
 //  WiFi-USB
 //
-//  Created by Brandon Groff on 6/25/16.
-//  Copyright © 2016 Brandon Groff. All rights reserved.
+//  Created by Brandon Groff on 6/26/16.
+//
+//  Copyright © 2016 Brandon Groff.
+//
+//  License: GNU GPLv3 (see LICENSE)
 //
 
 import UIKit
 
+/// a custom button that allows for a radial gradient background
 @IBDesignable
-class PowerButton: UIButton {
+class RadialGradientButton: UIButton {
     
+    /// the inner color to blend to
     @IBInspectable var radialGradientColor: UIColor? {
         didSet {
             if (self.radialGradientColor != nil && self.backgroundColor != nil) {
