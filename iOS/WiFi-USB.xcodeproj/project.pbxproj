@@ -7,47 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC230BD51D1F17DB00FC1CDE /* RadialGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC230BD41D1F17DB00FC1CDE /* RadialGradientButton.swift */; };
-		BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */; };
-		BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4167D81D1CD6B500C39115 /* JsonResponse.swift */; };
-		BC49A42A1D1F257D00C82E0B /* RadialGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */; };
-		BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */; };
-		BC5F3D0C1D1F509600ADD9BD /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F3D0B1D1F509600ADD9BD /* InfoViewController.swift */; };
-		BC5F3D0E1D1F5F6800ADD9BD /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F3D0D1D1F5F6800ADD9BD /* UIExtensions.swift */; };
-		BC5F3D101D1F6B9000ADD9BD /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F3D0F1D1F6B9000ADD9BD /* GlowingButton.swift */; };
-		BC5F3D121D1F850200ADD9BD /* HyperlinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F3D111D1F850200ADD9BD /* HyperlinkLabel.swift */; };
-		BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE061D1CBE6100373D28 /* AppDelegate.swift */; };
-		BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61EE081D1CBE6100373D28 /* ViewController.swift */; };
-		BC61EE0C1D1CBE6100373D28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC61EE0A1D1CBE6100373D28 /* Main.storyboard */; };
-		BC61EE0E1D1CBE6100373D28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC61EE0D1D1CBE6100373D28 /* Assets.xcassets */; };
-		BC61EE111D1CBE6100373D28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC61EE0F1D1CBE6100373D28 /* LaunchScreen.storyboard */; };
-		BCCFBE481D1F940400A981CB /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE471D1F940400A981CB /* FadeLabel.swift */; };
-		BCCFBE4A1D1FA63700A981CB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE491D1FA63700A981CB /* Reachability.swift */; };
+		BCCFBE761D1FA98600A981CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE751D1FA98600A981CB /* AppDelegate.swift */; };
+		BCCFBE781D1FA98600A981CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE771D1FA98600A981CB /* ViewController.swift */; };
+		BCCFBE7B1D1FA98600A981CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCFBE791D1FA98600A981CB /* Main.storyboard */; };
+		BCCFBE7D1D1FA98600A981CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCFBE7C1D1FA98600A981CB /* Assets.xcassets */; };
+		BCCFBE801D1FA98600A981CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCFBE7E1D1FA98600A981CB /* LaunchScreen.storyboard */; };
+		BCCFBE8A1D1FAA5100A981CB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE891D1FAA5100A981CB /* InfoViewController.swift */; };
+		BCCFBE8F1D1FAA5800A981CB /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8B1D1FAA5800A981CB /* ColorPalette.swift */; };
+		BCCFBE901D1FAA5800A981CB /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */; };
+		BCCFBE911D1FAA5800A981CB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */; };
+		BCCFBE921D1FAA5800A981CB /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */; };
+		BCCFBE991D1FAA6200A981CB /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */; };
+		BCCFBE9A1D1FAA6200A981CB /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */; };
+		BCCFBE9B1D1FAA6200A981CB /* HyperlinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */; };
+		BCCFBE9C1D1FAA6200A981CB /* RadialGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */; };
+		BCCFBE9D1D1FAA6200A981CB /* RadialGradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE971D1FAA6200A981CB /* RadialGradientColor.swift */; };
+		BCCFBE9E1D1FAA6200A981CB /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE981D1FAA6200A981CB /* UIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC230BD41D1F17DB00FC1CDE /* RadialGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientButton.swift; path = "UI Components/RadialGradientButton.swift"; sourceTree = "<group>"; };
-		BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBNetworker.swift; path = Model/WiFiUSBNetworker.swift; sourceTree = "<group>"; };
-		BC4167D81D1CD6B500C39115 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = Model/JsonResponse.swift; sourceTree = "<group>"; };
-		BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientColor.swift; path = "UI Components/RadialGradientColor.swift"; sourceTree = "<group>"; };
-		BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Model/ColorPalette.swift; sourceTree = "<group>"; };
-		BC5F3D0B1D1F509600ADD9BD /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		BC5F3D0D1D1F5F6800ADD9BD /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = "UI Components/UIExtensions.swift"; sourceTree = "<group>"; };
-		BC5F3D0F1D1F6B9000ADD9BD /* GlowingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlowingButton.swift; path = "UI Components/GlowingButton.swift"; sourceTree = "<group>"; };
-		BC5F3D111D1F850200ADD9BD /* HyperlinkLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HyperlinkLabel.swift; path = "UI Components/HyperlinkLabel.swift"; sourceTree = "<group>"; };
-		BC61EE031D1CBE6100373D28 /* WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC61EE061D1CBE6100373D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC61EE081D1CBE6100373D28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC61EE0B1D1CBE6100373D28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC61EE0D1D1CBE6100373D28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC61EE101D1CBE6100373D28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC61EE121D1CBE6100373D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCCFBE471D1F940400A981CB /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeLabel.swift; path = "UI Components/FadeLabel.swift"; sourceTree = "<group>"; };
-		BCCFBE491D1FA63700A981CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Model/Reachability.swift; sourceTree = "<group>"; };
+		BCCFBE721D1FA98600A981CB /* WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCFBE751D1FA98600A981CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCCFBE771D1FA98600A981CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCCFBE7A1D1FA98600A981CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCCFBE7C1D1FA98600A981CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCCFBE7F1D1FA98600A981CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCCFBE811D1FA98600A981CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCFBE891D1FAA5100A981CB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		BCCFBE8B1D1FAA5800A981CB /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPalette.swift; path = Model/ColorPalette.swift; sourceTree = "<group>"; };
+		BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = Model/JsonResponse.swift; sourceTree = "<group>"; };
+		BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Model/Reachability.swift; sourceTree = "<group>"; };
+		BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBNetworker.swift; path = Model/WiFiUSBNetworker.swift; sourceTree = "<group>"; };
+		BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeLabel.swift; path = "UI Components/FadeLabel.swift"; sourceTree = "<group>"; };
+		BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlowingButton.swift; path = "UI Components/GlowingButton.swift"; sourceTree = "<group>"; };
+		BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HyperlinkLabel.swift; path = "UI Components/HyperlinkLabel.swift"; sourceTree = "<group>"; };
+		BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientButton.swift; path = "UI Components/RadialGradientButton.swift"; sourceTree = "<group>"; };
+		BCCFBE971D1FAA6200A981CB /* RadialGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientColor.swift; path = "UI Components/RadialGradientColor.swift"; sourceTree = "<group>"; };
+		BCCFBE981D1FAA6200A981CB /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = "UI Components/UIExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC61EE001D1CBE6100373D28 /* Frameworks */ = {
+		BCCFBE6F1D1FA98600A981CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,72 +57,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC230BD31D1F179F00FC1CDE /* UI Components */ = {
+		BCCFBE691D1FA98600A981CB = {
 			isa = PBXGroup;
 			children = (
-				BC230BD41D1F17DB00FC1CDE /* RadialGradientButton.swift */,
-				BC5F3D0D1D1F5F6800ADD9BD /* UIExtensions.swift */,
-				BC49A4291D1F257D00C82E0B /* RadialGradientColor.swift */,
-				BC5F3D0F1D1F6B9000ADD9BD /* GlowingButton.swift */,
-				BC5F3D111D1F850200ADD9BD /* HyperlinkLabel.swift */,
-				BCCFBE471D1F940400A981CB /* FadeLabel.swift */,
-			);
-			name = "UI Components";
-			sourceTree = "<group>";
-		};
-		BC54FB6A1D1CC23700BF1AAC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BC54FB6B1D1CC25800BF1AAC /* ColorPalette.swift */,
-				BC4167D61D1CD65E00C39115 /* WiFiUSBNetworker.swift */,
-				BC4167D81D1CD6B500C39115 /* JsonResponse.swift */,
-				BCCFBE491D1FA63700A981CB /* Reachability.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		BC61EDFA1D1CBE6100373D28 = {
-			isa = PBXGroup;
-			children = (
-				BC61EE051D1CBE6100373D28 /* WiFi-USB */,
-				BC61EE041D1CBE6100373D28 /* Products */,
+				BCCFBE741D1FA98600A981CB /* WiFi-USB */,
+				BCCFBE731D1FA98600A981CB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BC61EE041D1CBE6100373D28 /* Products */ = {
+		BCCFBE731D1FA98600A981CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC61EE031D1CBE6100373D28 /* WiFi-USB.app */,
+				BCCFBE721D1FA98600A981CB /* WiFi-USB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC61EE051D1CBE6100373D28 /* WiFi-USB */ = {
+		BCCFBE741D1FA98600A981CB /* WiFi-USB */ = {
 			isa = PBXGroup;
 			children = (
-				BC230BD31D1F179F00FC1CDE /* UI Components */,
-				BC61EE061D1CBE6100373D28 /* AppDelegate.swift */,
-				BC61EE081D1CBE6100373D28 /* ViewController.swift */,
-				BC5F3D0B1D1F509600ADD9BD /* InfoViewController.swift */,
-				BC54FB6A1D1CC23700BF1AAC /* Model */,
-				BC61EE0A1D1CBE6100373D28 /* Main.storyboard */,
-				BC61EE0D1D1CBE6100373D28 /* Assets.xcassets */,
-				BC61EE0F1D1CBE6100373D28 /* LaunchScreen.storyboard */,
-				BC61EE121D1CBE6100373D28 /* Info.plist */,
+				BCCFBE881D1FAA1F00A981CB /* UI Components */,
+				BCCFBE871D1FAA1900A981CB /* Model */,
+				BCCFBE751D1FA98600A981CB /* AppDelegate.swift */,
+				BCCFBE771D1FA98600A981CB /* ViewController.swift */,
+				BCCFBE891D1FAA5100A981CB /* InfoViewController.swift */,
+				BCCFBE791D1FA98600A981CB /* Main.storyboard */,
+				BCCFBE7C1D1FA98600A981CB /* Assets.xcassets */,
+				BCCFBE7E1D1FA98600A981CB /* LaunchScreen.storyboard */,
+				BCCFBE811D1FA98600A981CB /* Info.plist */,
 			);
 			path = "WiFi-USB";
+			sourceTree = "<group>";
+		};
+		BCCFBE871D1FAA1900A981CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCCFBE8B1D1FAA5800A981CB /* ColorPalette.swift */,
+				BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */,
+				BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */,
+				BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BCCFBE881D1FAA1F00A981CB /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */,
+				BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */,
+				BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */,
+				BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */,
+				BCCFBE971D1FAA6200A981CB /* RadialGradientColor.swift */,
+				BCCFBE981D1FAA6200A981CB /* UIExtensions.swift */,
+			);
+			name = "UI Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC61EE021D1CBE6100373D28 /* WiFi-USB */ = {
+		BCCFBE711D1FA98600A981CB /* WiFi-USB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC61EE151D1CBE6100373D28 /* Build configuration list for PBXNativeTarget "WiFi-USB" */;
+			buildConfigurationList = BCCFBE841D1FA98600A981CB /* Build configuration list for PBXNativeTarget "WiFi-USB" */;
 			buildPhases = (
-				BC61EDFF1D1CBE6100373D28 /* Sources */,
-				BC61EE001D1CBE6100373D28 /* Frameworks */,
-				BC61EE011D1CBE6100373D28 /* Resources */,
+				BCCFBE6E1D1FA98600A981CB /* Sources */,
+				BCCFBE6F1D1FA98600A981CB /* Frameworks */,
+				BCCFBE701D1FA98600A981CB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -130,26 +130,25 @@
 			);
 			name = "WiFi-USB";
 			productName = "WiFi-USB";
-			productReference = BC61EE031D1CBE6100373D28 /* WiFi-USB.app */;
+			productReference = BCCFBE721D1FA98600A981CB /* WiFi-USB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC61EDFB1D1CBE6100373D28 /* Project object */ = {
+		BCCFBE6A1D1FA98600A981CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Brandon Groff";
 				TargetAttributes = {
-					BC61EE021D1CBE6100373D28 = {
+					BCCFBE711D1FA98600A981CB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2246FUGJ54;
 					};
 				};
 			};
-			buildConfigurationList = BC61EDFE1D1CBE6100373D28 /* Build configuration list for PBXProject "WiFi-USB" */;
+			buildConfigurationList = BCCFBE6D1D1FA98600A981CB /* Build configuration list for PBXProject "WiFi-USB" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -157,65 +156,65 @@
 				en,
 				Base,
 			);
-			mainGroup = BC61EDFA1D1CBE6100373D28;
-			productRefGroup = BC61EE041D1CBE6100373D28 /* Products */;
+			mainGroup = BCCFBE691D1FA98600A981CB;
+			productRefGroup = BCCFBE731D1FA98600A981CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC61EE021D1CBE6100373D28 /* WiFi-USB */,
+				BCCFBE711D1FA98600A981CB /* WiFi-USB */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC61EE011D1CBE6100373D28 /* Resources */ = {
+		BCCFBE701D1FA98600A981CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC61EE111D1CBE6100373D28 /* LaunchScreen.storyboard in Resources */,
-				BC61EE0E1D1CBE6100373D28 /* Assets.xcassets in Resources */,
-				BC61EE0C1D1CBE6100373D28 /* Main.storyboard in Resources */,
+				BCCFBE801D1FA98600A981CB /* LaunchScreen.storyboard in Resources */,
+				BCCFBE7D1D1FA98600A981CB /* Assets.xcassets in Resources */,
+				BCCFBE7B1D1FA98600A981CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC61EDFF1D1CBE6100373D28 /* Sources */ = {
+		BCCFBE6E1D1FA98600A981CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC5F3D121D1F850200ADD9BD /* HyperlinkLabel.swift in Sources */,
-				BC61EE091D1CBE6100373D28 /* ViewController.swift in Sources */,
-				BC4167D91D1CD6B500C39115 /* JsonResponse.swift in Sources */,
-				BC5F3D101D1F6B9000ADD9BD /* GlowingButton.swift in Sources */,
-				BC5F3D0E1D1F5F6800ADD9BD /* UIExtensions.swift in Sources */,
-				BC61EE071D1CBE6100373D28 /* AppDelegate.swift in Sources */,
-				BC5F3D0C1D1F509600ADD9BD /* InfoViewController.swift in Sources */,
-				BC49A42A1D1F257D00C82E0B /* RadialGradientColor.swift in Sources */,
-				BC230BD51D1F17DB00FC1CDE /* RadialGradientButton.swift in Sources */,
-				BC54FB6C1D1CC25800BF1AAC /* ColorPalette.swift in Sources */,
-				BCCFBE481D1F940400A981CB /* FadeLabel.swift in Sources */,
-				BC4167D71D1CD65E00C39115 /* WiFiUSBNetworker.swift in Sources */,
-				BCCFBE4A1D1FA63700A981CB /* Reachability.swift in Sources */,
+				BCCFBE781D1FA98600A981CB /* ViewController.swift in Sources */,
+				BCCFBE901D1FAA5800A981CB /* JsonResponse.swift in Sources */,
+				BCCFBE9E1D1FAA6200A981CB /* UIExtensions.swift in Sources */,
+				BCCFBE991D1FAA6200A981CB /* FadeLabel.swift in Sources */,
+				BCCFBE911D1FAA5800A981CB /* Reachability.swift in Sources */,
+				BCCFBE921D1FAA5800A981CB /* WiFiUSBNetworker.swift in Sources */,
+				BCCFBE8A1D1FAA5100A981CB /* InfoViewController.swift in Sources */,
+				BCCFBE9D1D1FAA6200A981CB /* RadialGradientColor.swift in Sources */,
+				BCCFBE9A1D1FAA6200A981CB /* GlowingButton.swift in Sources */,
+				BCCFBE9B1D1FAA6200A981CB /* HyperlinkLabel.swift in Sources */,
+				BCCFBE761D1FA98600A981CB /* AppDelegate.swift in Sources */,
+				BCCFBE9C1D1FAA6200A981CB /* RadialGradientButton.swift in Sources */,
+				BCCFBE8F1D1FAA5800A981CB /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BC61EE0A1D1CBE6100373D28 /* Main.storyboard */ = {
+		BCCFBE791D1FA98600A981CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC61EE0B1D1CBE6100373D28 /* Base */,
+				BCCFBE7A1D1FA98600A981CB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BC61EE0F1D1CBE6100373D28 /* LaunchScreen.storyboard */ = {
+		BCCFBE7E1D1FA98600A981CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC61EE101D1CBE6100373D28 /* Base */,
+				BCCFBE7F1D1FA98600A981CB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -223,7 +222,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC61EE131D1CBE6100373D28 /* Debug */ = {
+		BCCFBE821D1FA98600A981CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,7 +268,7 @@
 			};
 			name = Debug;
 		};
-		BC61EE141D1CBE6100373D28 /* Release */ = {
+		BCCFBE831D1FA98600A981CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -308,26 +307,24 @@
 			};
 			name = Release;
 		};
-		BC61EE161D1CBE6100373D28 /* Debug */ = {
+		BCCFBE851D1FA98600A981CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WiFi-USB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brandon-Groff.WiFi-USB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		BC61EE171D1CBE6100373D28 /* Release */ = {
+		BCCFBE861D1FA98600A981CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WiFi-USB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brandon-Groff.WiFi-USB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,25 +334,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC61EDFE1D1CBE6100373D28 /* Build configuration list for PBXProject "WiFi-USB" */ = {
+		BCCFBE6D1D1FA98600A981CB /* Build configuration list for PBXProject "WiFi-USB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC61EE131D1CBE6100373D28 /* Debug */,
-				BC61EE141D1CBE6100373D28 /* Release */,
+				BCCFBE821D1FA98600A981CB /* Debug */,
+				BCCFBE831D1FA98600A981CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC61EE151D1CBE6100373D28 /* Build configuration list for PBXNativeTarget "WiFi-USB" */ = {
+		BCCFBE841D1FA98600A981CB /* Build configuration list for PBXNativeTarget "WiFi-USB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC61EE161D1CBE6100373D28 /* Debug */,
-				BC61EE171D1CBE6100373D28 /* Release */,
+				BCCFBE851D1FA98600A981CB /* Debug */,
+				BCCFBE861D1FA98600A981CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BC61EDFB1D1CBE6100373D28 /* Project object */;
+	rootObject = BCCFBE6A1D1FA98600A981CB /* Project object */;
 }
