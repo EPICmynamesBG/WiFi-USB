@@ -63,6 +63,10 @@ class WiFiUSBNetworker {
     private static let DeviceOnlineCheckTime: NSTimeInterval = 0.5
     /// Timer for checking if device is back online
     private var deviceOfflineTimer: NSTimer?
+    /// Custom request timeouts
+    private var requestTimeoutTimer: NSTimer?
+    /// Static var for when a request should timeout (5 seconds)
+    private static var RequestTimeoutTime: NSTimeInterval = 5.0
     
     init () {
         self.currentDataTask = nil
@@ -100,6 +104,7 @@ class WiFiUSBNetworker {
      Timer method to resync once the device is back online
      */
     @objc private func isDeviceBackOnline() {
+        print("checking if online")
         if (Reachability.isConnectedToNetwork()) {
             self.deviceOfflineTimer?.invalidate()
             self.deviceOfflineTimer = nil
@@ -127,11 +132,19 @@ class WiFiUSBNetworker {
         let url = NSURL(string: BASE_URL + endpoint)
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = method
+
         let datatask = session.dataTaskWithRequest(request) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) in
             self.requestProcessor(data, response: response, error: error)
         }
         self.startDataTask(datatask)
+    }
+    
+    private func beginWiFiUSBOnlineCheckTimer() {
+        
+        if (self.deviceOfflineTimer == nil) {
+            
+        }
     }
     
     /**
@@ -143,7 +156,11 @@ class WiFiUSBNetworker {
      */
     private func requestProcessor (data: NSData?, response: NSURLResponse?, error: NSError?) {
         if (error != nil) {
-            self.throwError(error, withMessage: "Power toggle request error")
+            if (error!.code == NSURLErrorCancelled) {
+                self.throwError(error, withMessage: "Request timeout. Please verify that WiFi-USB is on and connected to the same network as this device")
+            } else {
+                self.throwError(error, withMessage: "Power toggle request error")
+            }
             return
         }
         
@@ -192,9 +209,22 @@ class WiFiUSBNetworker {
         if (self.currentDataTask != nil) {
             self.currentDataTask?.cancel()
         }
+        if (self.requestTimeoutTimer != nil) {
+            self.requestTimeoutTimer?.fire()
+            self.requestTimeoutTimer?.invalidate()
+            self.requestTimeoutTimer = nil
+        }
         self.currentDataTask = datatask
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.currentDataTask?.resume()
+        self.requestTimeoutTimer = NSTimer.scheduledTimerWithTimeInterval(WiFiUSBNetworker.RequestTimeoutTime, target: self, selector: #selector(self.requestTimeout), userInfo: nil, repeats: false)
+    }
+    
+    @objc func requestTimeout() {
+        self.requestTimeoutTimer?.invalidate()
+        self.requestTimeoutTimer = nil
+        self.currentDataTask?.cancel()
+        
     }
     
     /**
@@ -236,6 +266,7 @@ class WiFiUSBNetworker {
             self.delegate?.WiFiUSBRequestError(error, message: message)
         }
         self.currentDataTask = nil
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
 }

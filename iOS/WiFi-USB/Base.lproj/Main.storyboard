@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="FYj-ue-FE1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="tintColor" red="1" green="0.99215686319999996" blue="0.062745101750000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="7" minY="5" maxX="7" maxY="5"/>
                                 <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -70,7 +70,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="100"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
@@ -91,7 +91,39 @@
                                     <action selector="infoButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27h-Qn-uCw"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-Dm-CUG" userLabel="NotificationLabel" customClass="FadeLabel" customModule="WiFi_USB" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MW-Wt-unB" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
+                                <rect key="frame" x="247" y="429" width="107" height="27"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <inset key="contentEdgeInsets" minX="7" minY="5" maxX="7" maxY="5"/>
+                                <state key="normal" title="Update Status">
+                                    <color key="titleColor" red="0.41568627953529358" green="0.023529412224888802" blue="0.64705884456634521" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.086274512112140656" green="0.094117648899555206" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.41568627953529358" green="0.023529412224888802" blue="0.64705884456634521" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textGlow">
+                                        <color key="value" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animatedGlow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="statusRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TTW-XM-7Oy"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-Dm-CUG" userLabel="NotificationLabel" customClass="NotificationLabel" customModule="WiFi_USB" customModuleProvider="target">
                                 <rect key="frame" x="250" y="563" width="100" height="17"/>
                                 <color key="backgroundColor" red="0.086274512112140656" green="0.094117648899555206" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -125,8 +157,12 @@
                             <constraint firstItem="jiJ-rA-EZP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="N2U-lR-kZD"/>
                             <constraint firstItem="8Vm-q3-0bP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OaD-gW-G3c"/>
                             <constraint firstItem="8Vm-q3-0bP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="RIT-bM-aLI"/>
+                            <constraint firstItem="LKf-Dm-CUG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="XF5-f9-hfQ"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="LKf-Dm-CUG" secondAttribute="trailing" constant="16" id="XTU-0H-HJQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Vm-q3-0bP" secondAttribute="trailing" constant="-20" id="aYe-Se-gMx"/>
                             <constraint firstItem="9ga-Kz-knp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mav-kJ-3w8"/>
+                            <constraint firstItem="9MW-Wt-unB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p32-r7-idA"/>
+                            <constraint firstItem="9MW-Wt-unB" firstAttribute="top" secondItem="jiJ-rA-EZP" secondAttribute="bottom" constant="29" id="wKC-fw-0RW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -134,6 +170,7 @@
                         <outlet property="infoViewContainer" destination="8Vm-q3-0bP" id="1Za-cD-6qe"/>
                         <outlet property="notificationLabel" destination="LKf-Dm-CUG" id="QUJ-qj-MIX"/>
                         <outlet property="rebootButton" destination="9ga-Kz-knp" id="ScV-fQ-Vxb"/>
+                        <outlet property="statusButton" destination="9MW-Wt-unB" id="mkS-gT-FIT"/>
                         <outlet property="togglePowerButton" destination="jiJ-rA-EZP" id="EJB-Ae-oY1"/>
                     </connections>
                 </viewController>
@@ -199,8 +236,8 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="link" value="https://github.com/epicmynamesbg"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Version 0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwR-Xr-HAV">
-                                        <rect key="frame" x="236" y="407" width="88" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Version 0.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwR-Xr-HAV">
+                                        <rect key="frame" x="235" y="407" width="90" height="15"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -232,7 +269,7 @@
                                         </connections>
                                     </button>
                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-nq-c0j" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
-                                        <rect key="frame" x="499" y="20" width="53" height="28"/>
+                                        <rect key="frame" x="499" y="24" width="53" height="28"/>
                                         <inset key="contentEdgeInsets" minX="7" minY="5" maxX="7" maxY="5"/>
                                         <state key="normal" title="Close">
                                             <color key="titleColor" red="1" green="0.20784313979999999" blue="0.18823529780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +323,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AQ4-aA-PA6" firstAttribute="leading" secondItem="zA6-DT-B5V" secondAttribute="leadingMargin" id="42C-Gp-CgR"/>
-                            <constraint firstItem="ee7-nq-c0j" firstAttribute="top" secondItem="O39-kn-Sq5" secondAttribute="bottom" constant="20" id="GIl-Za-69k"/>
+                            <constraint firstItem="ee7-nq-c0j" firstAttribute="top" secondItem="O39-kn-Sq5" secondAttribute="bottom" constant="24" id="GIl-Za-69k"/>
                             <constraint firstItem="C6L-wT-FSQ" firstAttribute="top" secondItem="AQ4-aA-PA6" secondAttribute="bottom" id="SaW-Fi-IxH"/>
                             <constraint firstItem="AQ4-aA-PA6" firstAttribute="top" secondItem="O39-kn-Sq5" secondAttribute="bottom" id="dIJ-uf-wB9"/>
                             <constraint firstItem="AQ4-aA-PA6" firstAttribute="trailing" secondItem="zA6-DT-B5V" secondAttribute="trailingMargin" id="lrL-QY-pIp"/>

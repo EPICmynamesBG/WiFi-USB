@@ -17,7 +17,7 @@
 		BCCFBE901D1FAA5800A981CB /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */; };
 		BCCFBE911D1FAA5800A981CB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */; };
 		BCCFBE921D1FAA5800A981CB /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */; };
-		BCCFBE991D1FAA6200A981CB /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */; };
+		BCCFBE991D1FAA6200A981CB /* NotificationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE931D1FAA6200A981CB /* NotificationLabel.swift */; };
 		BCCFBE9A1D1FAA6200A981CB /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */; };
 		BCCFBE9B1D1FAA6200A981CB /* HyperlinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */; };
 		BCCFBE9C1D1FAA6200A981CB /* RadialGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */; };
@@ -38,7 +38,7 @@
 		BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = Model/JsonResponse.swift; sourceTree = "<group>"; };
 		BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Model/Reachability.swift; sourceTree = "<group>"; };
 		BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WiFiUSBNetworker.swift; path = Model/WiFiUSBNetworker.swift; sourceTree = "<group>"; };
-		BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeLabel.swift; path = "UI Components/FadeLabel.swift"; sourceTree = "<group>"; };
+		BCCFBE931D1FAA6200A981CB /* NotificationLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationLabel.swift; path = "UI Components/NotificationLabel.swift"; sourceTree = "<group>"; };
 		BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlowingButton.swift; path = "UI Components/GlowingButton.swift"; sourceTree = "<group>"; };
 		BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HyperlinkLabel.swift; path = "UI Components/HyperlinkLabel.swift"; sourceTree = "<group>"; };
 		BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientButton.swift; path = "UI Components/RadialGradientButton.swift"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		BCCFBE881D1FAA1F00A981CB /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
-				BCCFBE931D1FAA6200A981CB /* FadeLabel.swift */,
+				BCCFBE931D1FAA6200A981CB /* NotificationLabel.swift */,
 				BCCFBE941D1FAA6200A981CB /* GlowingButton.swift */,
 				BCCFBE951D1FAA6200A981CB /* HyperlinkLabel.swift */,
 				BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */,
@@ -187,7 +187,7 @@
 				BCCFBE781D1FA98600A981CB /* ViewController.swift in Sources */,
 				BCCFBE901D1FAA5800A981CB /* JsonResponse.swift in Sources */,
 				BCCFBE9E1D1FAA6200A981CB /* UIExtensions.swift in Sources */,
-				BCCFBE991D1FAA6200A981CB /* FadeLabel.swift in Sources */,
+				BCCFBE991D1FAA6200A981CB /* NotificationLabel.swift in Sources */,
 				BCCFBE911D1FAA5800A981CB /* Reachability.swift in Sources */,
 				BCCFBE921D1FAA5800A981CB /* WiFiUSBNetworker.swift in Sources */,
 				BCCFBE8A1D1FAA5100A981CB /* InfoViewController.swift in Sources */,
