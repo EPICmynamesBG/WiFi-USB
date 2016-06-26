@@ -59,6 +59,10 @@ class WiFiUSBNetworker {
     }
     /// Constant for retry time after device has rebooted
     private static let RebootOnlineCheckTime: NSTimeInterval = 3.0
+    /// Constant for rechecking it this device is online
+    private static let DeviceOnlineCheckTime: NSTimeInterval = 0.5
+    /// Timer for checking if device is back online
+    private var deviceOfflineTimer: NSTimer?
     
     init () {
         self.currentDataTask = nil
@@ -93,6 +97,17 @@ class WiFiUSBNetworker {
     }
     
     /**
+     Timer method to resync once the device is back online
+     */
+    @objc private func isDeviceBackOnline() {
+        if (Reachability.isConnectedToNetwork()) {
+            self.deviceOfflineTimer?.invalidate()
+            self.deviceOfflineTimer = nil
+            self.getStatus()
+        }
+    }
+    
+    /**
      Simplified method of sending a network request
      
      - parameter endpoint: API url endpoin
@@ -101,6 +116,11 @@ class WiFiUSBNetworker {
     private func sendRequestToEndpoint (endpoint: String, withHTTPMethod method:String) {
         if (!Reachability.isConnectedToNetwork()) {
             self.delegate?.WiFiUSBRequestError(nil, message: "This device isn't connected to any networks")
+            self.deviceOfflineTimer = NSTimer.scheduledTimerWithTimeInterval(WiFiUSBNetworker.DeviceOnlineCheckTime,
+                                                                             target: self,
+                                                                             selector: #selector(self.isDeviceBackOnline),
+                                                                             userInfo: nil,
+                                                                             repeats: true)
             return
         }
         
