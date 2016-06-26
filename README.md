@@ -6,7 +6,7 @@ _Hardware Version:_ 1.1
 
 _Firmware Version:_ 1.0
 
-_iOS App Version_: 0.1
+_iOS App Version_: 0.3
 
 _Web App Version_: 0.1
 
@@ -83,4 +83,6 @@ _Reboot the device_
 
 [_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
 
-[_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : Apache License 2.0
+[_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : GNU GPLv3
+
+[_iOS_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/iOS/LICENSE) : GNU GPLv3
