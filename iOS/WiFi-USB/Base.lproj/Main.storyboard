@@ -18,27 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiJ-rA-EZP" customClass="PowerButton" customModule="WiFi_USB" customModuleProvider="target">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jiJ-rA-EZP" secondAttribute="height" multiplier="1:1" id="8BH-3C-nPK"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="0.20784313976764679" blue="0.18823529779911041" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
-                                <state key="normal" image="power_button"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="glow">
-                                        <color key="value" red="0.50980395078659058" green="0.086274512112140656" blue="0.75686275959014893" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="glowRadius">
-                                        <real key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-Kz-knp" customClass="PowerButton" customModule="WiFi_USB" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ga-Kz-knp" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
                                 <rect key="frame" x="20" y="28" width="100" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="FYj-ue-FE1"/>
@@ -53,33 +33,105 @@
                                     <color key="titleColor" red="0.086274512112140656" green="0.094117648899555206" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="glow">
-                                        <color key="value" red="1" green="0.83529412746429443" blue="0.062745101749897003" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="glowRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <integer key="value" value="3"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <integer key="value" value="1"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.87058824300765991" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.99215686321258545" blue="0.062745101749897003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textGlow">
+                                        <color key="value" red="0.60000002384185791" green="0.59607845544815063" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animatedGlow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="imageGlow">
+                                        <color key="value" red="0.60000002384185791" green="0.59607845544815063" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="rebootButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Ya-gl-Kfu"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiJ-rA-EZP" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jiJ-rA-EZP" secondAttribute="height" multiplier="1:1" id="8BH-3C-nPK"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.20784313976764679" blue="0.18823529779911041" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="power_button">
+                                    <color key="titleColor" red="1" green="0.20784313976764679" blue="0.18823529779911041" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.086274512112140656" green="0.094117648899555206" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="imageGlow">
+                                        <color key="value" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animatedGlow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="togglePowerButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBd-qb-QHB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW3-U5-1DK">
+                                <rect key="frame" x="558" y="28" width="22" height="22"/>
+                                <color key="tintColor" red="0.25490197539329529" green="0.011764706112444401" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="infoButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27h-Qn-uCw"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-Dm-CUG" userLabel="NotificationLabel" customClass="FadeLabel" customModule="WiFi_USB" customModuleProvider="target">
+                                <rect key="frame" x="250" y="563" width="100" height="17"/>
+                                <color key="backgroundColor" red="0.086274512112140656" green="0.094117648899555206" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="c7C-8I-iF6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vm-q3-0bP" userLabel="Info View Container">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="iea-9d-eiE" kind="embed" identifier="infoEmbed" id="U2L-gq-JDq"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666669999997" green="0.95294117649999999" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LKf-Dm-CUG" secondAttribute="bottom" constant="20" id="4SU-DK-rxQ"/>
                             <constraint firstItem="9ga-Kz-knp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9F3-B4-S32"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Vm-q3-0bP" secondAttribute="bottom" id="BMI-Ro-cB4"/>
+                            <constraint firstItem="LKf-Dm-CUG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fqt-jq-c17"/>
                             <constraint firstItem="jiJ-rA-EZP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lid-6f-NFI"/>
+                            <constraint firstItem="xW3-U5-1DK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Lyb-kC-PVj"/>
+                            <constraint firstItem="xW3-U5-1DK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="MRa-1W-SYU"/>
                             <constraint firstItem="jiJ-rA-EZP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="N2U-lR-kZD"/>
+                            <constraint firstItem="8Vm-q3-0bP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OaD-gW-G3c"/>
+                            <constraint firstItem="8Vm-q3-0bP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="RIT-bM-aLI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Vm-q3-0bP" secondAttribute="trailing" constant="-20" id="aYe-Se-gMx"/>
                             <constraint firstItem="9ga-Kz-knp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mav-kJ-3w8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="infoButton" destination="xW3-U5-1DK" id="qK7-Uh-pG1"/>
+                        <outlet property="infoViewContainer" destination="8Vm-q3-0bP" id="1Za-cD-6qe"/>
+                        <outlet property="notificationLabel" destination="LKf-Dm-CUG" id="QUJ-qj-MIX"/>
                         <outlet property="rebootButton" destination="9ga-Kz-knp" id="ScV-fQ-Vxb"/>
                         <outlet property="togglePowerButton" destination="jiJ-rA-EZP" id="EJB-Ae-oY1"/>
                     </connections>
@@ -87,6 +139,167 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="469"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="tdC-Mj-ibq">
+            <objects>
+                <viewController id="iea-9d-eiE" customClass="InfoViewController" customModule="WiFi_USB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O39-kn-Sq5"/>
+                        <viewControllerLayoutGuide type="bottom" id="C6L-wT-FSQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zA6-DT-B5V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-aA-PA6">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WiFi-USB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfY-UL-zCW">
+                                        <rect key="frame" x="224" y="32" width="113" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWb-JX-ruc">
+                                        <rect key="frame" x="8" y="97" width="544" height="26"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrC-eo-sbx">
+                                        <rect key="frame" x="8" y="131" width="544" height="62"/>
+                                        <string key="text">WiFi-USB is a publicly available combination of hardware and software that allows people to remotely power on/off any device that is powererd by a 5V USB port.</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creators" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ6-ge-91z">
+                                        <rect key="frame" x="240" y="225" width="80" height="26"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex Cordonnier - Hardware" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxN-MO-hhL" customClass="HyperlinkLabel" customModule="WiFi_USB" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="259" width="544" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="1" green="0.99607843160629272" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="link" value="https://github.com/ajcord"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brandon Groff - Firmware, iOS, Web" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvb-8k-i0b" customClass="HyperlinkLabel" customModule="WiFi_USB" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="287" width="544" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" red="1" green="0.99607843160629272" blue="0.27058824896812439" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="link" value="https://github.com/epicmynamesbg"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Version 0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwR-Xr-HAV">
+                                        <rect key="frame" x="236" y="407" width="88" height="15"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsw-TU-oda" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
+                                        <rect key="frame" x="199" y="339" width="162" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <inset key="contentEdgeInsets" minX="9" minY="5" maxX="9" maxY="5"/>
+                                        <state key="normal" title="View on Github">
+                                            <color key="titleColor" red="0.57647061347961426" green="0.24313725531101227" blue="0.77254903316497803" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.57647061347961426" green="0.24313725531101227" blue="0.77254903316497803" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textGlow">
+                                                <color key="value" red="0.50980395078659058" green="0.086274512112140656" blue="0.75686275959014893" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animatedGlow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openInGithubTap:" destination="iea-9d-eiE" eventType="touchUpInside" id="fI4-90-xXE"/>
+                                        </connections>
+                                    </button>
+                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-nq-c0j" customClass="GlowingButton" customModule="WiFi_USB" customModuleProvider="target">
+                                        <rect key="frame" x="499" y="20" width="53" height="28"/>
+                                        <inset key="contentEdgeInsets" minX="7" minY="5" maxX="7" maxY="5"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="1" green="0.20784313979999999" blue="0.18823529780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.20784313976764679" blue="0.18823529779911041" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textGlow">
+                                                <color key="value" red="0.93333333730697632" green="0.93333333730697632" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animatedGlow" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeButtonTap:" destination="iea-9d-eiE" eventType="touchUpInside" id="IRk-Xm-WZg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wvb-8k-i0b" secondAttribute="trailing" constant="8" id="2n1-DI-nvO"/>
+                                    <constraint firstItem="lWb-JX-ruc" firstAttribute="top" secondItem="tfY-UL-zCW" secondAttribute="bottom" constant="32" id="5nC-Qh-TWu"/>
+                                    <constraint firstItem="SrC-eo-sbx" firstAttribute="top" secondItem="lWb-JX-ruc" secondAttribute="bottom" constant="8" id="6OR-Mf-tOD"/>
+                                    <constraint firstAttribute="trailing" secondItem="lWb-JX-ruc" secondAttribute="trailing" constant="8" id="9rw-CV-a6Z"/>
+                                    <constraint firstItem="wQ6-ge-91z" firstAttribute="top" secondItem="SrC-eo-sbx" secondAttribute="bottom" constant="32" id="HC4-nL-Fl1"/>
+                                    <constraint firstItem="SrC-eo-sbx" firstAttribute="leading" secondItem="AQ4-aA-PA6" secondAttribute="leading" constant="8" id="IZ6-7T-Bde"/>
+                                    <constraint firstAttribute="trailing" secondItem="SrC-eo-sbx" secondAttribute="trailing" constant="8" id="IhY-ru-S4J"/>
+                                    <constraint firstItem="iwR-Xr-HAV" firstAttribute="top" secondItem="Rsw-TU-oda" secondAttribute="bottom" constant="32" id="JDo-gl-i02"/>
+                                    <constraint firstItem="Rsw-TU-oda" firstAttribute="top" secondItem="Wvb-8k-i0b" secondAttribute="bottom" constant="32" id="MZh-Iq-AF9"/>
+                                    <constraint firstAttribute="trailing" secondItem="RxN-MO-hhL" secondAttribute="trailing" constant="8" id="W4v-hu-n8v"/>
+                                    <constraint firstItem="lWb-JX-ruc" firstAttribute="leading" secondItem="AQ4-aA-PA6" secondAttribute="leading" constant="8" id="Xfd-qr-i0W"/>
+                                    <constraint firstItem="RxN-MO-hhL" firstAttribute="top" secondItem="wQ6-ge-91z" secondAttribute="bottom" constant="8" id="ZWl-2Q-kCe"/>
+                                    <constraint firstItem="lWb-JX-ruc" firstAttribute="centerX" secondItem="AQ4-aA-PA6" secondAttribute="centerX" id="agj-h5-8lx"/>
+                                    <constraint firstItem="Wvb-8k-i0b" firstAttribute="leading" secondItem="AQ4-aA-PA6" secondAttribute="leading" constant="8" id="brx-bG-mRV"/>
+                                    <constraint firstItem="Wvb-8k-i0b" firstAttribute="top" secondItem="RxN-MO-hhL" secondAttribute="bottom" constant="8" id="cp1-9b-1d4"/>
+                                    <constraint firstItem="Rsw-TU-oda" firstAttribute="centerX" secondItem="AQ4-aA-PA6" secondAttribute="centerX" id="eUj-Ik-X9e"/>
+                                    <constraint firstItem="tfY-UL-zCW" firstAttribute="top" secondItem="AQ4-aA-PA6" secondAttribute="top" constant="32" id="kko-ZJ-h8U"/>
+                                    <constraint firstItem="wQ6-ge-91z" firstAttribute="centerX" secondItem="AQ4-aA-PA6" secondAttribute="centerX" id="mC2-Js-NoI"/>
+                                    <constraint firstItem="tfY-UL-zCW" firstAttribute="centerX" secondItem="AQ4-aA-PA6" secondAttribute="centerX" id="tSQ-ZT-3ck"/>
+                                    <constraint firstItem="RxN-MO-hhL" firstAttribute="leading" secondItem="AQ4-aA-PA6" secondAttribute="leading" constant="8" id="teJ-9Y-qfw"/>
+                                    <constraint firstItem="iwR-Xr-HAV" firstAttribute="centerX" secondItem="AQ4-aA-PA6" secondAttribute="centerX" id="vKL-3t-A0f"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwR-Xr-HAV" secondAttribute="bottom" constant="16" id="xHi-A2-3cy"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AQ4-aA-PA6" firstAttribute="leading" secondItem="zA6-DT-B5V" secondAttribute="leadingMargin" id="42C-Gp-CgR"/>
+                            <constraint firstItem="ee7-nq-c0j" firstAttribute="top" secondItem="O39-kn-Sq5" secondAttribute="bottom" constant="20" id="GIl-Za-69k"/>
+                            <constraint firstItem="C6L-wT-FSQ" firstAttribute="top" secondItem="AQ4-aA-PA6" secondAttribute="bottom" id="SaW-Fi-IxH"/>
+                            <constraint firstItem="AQ4-aA-PA6" firstAttribute="top" secondItem="O39-kn-Sq5" secondAttribute="bottom" id="dIJ-uf-wB9"/>
+                            <constraint firstItem="AQ4-aA-PA6" firstAttribute="trailing" secondItem="zA6-DT-B5V" secondAttribute="trailingMargin" id="lrL-QY-pIp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ee7-nq-c0j" secondAttribute="trailing" constant="8" id="mlD-oG-cuW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="ee7-nq-c0j" id="GVo-JB-kfW"/>
+                        <outlet property="scrollView" destination="AQ4-aA-PA6" id="ACH-jE-IsN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuk-Wg-GKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="469"/>
         </scene>
     </scenes>
     <resources>
