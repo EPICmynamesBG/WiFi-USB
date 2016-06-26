@@ -45,28 +45,45 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         self.networker?.delegate = self
         self.disableButtons()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppMinimize), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppResume), name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(fadeTime + 0.001,
-                                                                      target: self,
-                                                                      selector: #selector(ViewController.animateBackground),
-                                                                      userInfo: nil,
-                                                                      repeats: true)
-        self.sendStatusSignal()
-
+        self.onAppResume()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.backgroundTimer?.invalidate()
-        
+        self.onAppMinimize()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     Stop animations, clear the timers
+     */
+    @objc private func onAppMinimize() {
+        self.backgroundTimer?.invalidate()
+        self.backgroundTimer = nil
+    }
+    
+    /**
+     restart animations, update the WiFi-USB status
+     */
+    @objc private func onAppResume() {
+        if (self.backgroundTimer == nil) {
+            self.backgroundTimer = NSTimer.scheduledTimerWithTimeInterval(fadeTime + 0.001,
+                                                                          target: self,
+                                                                          selector: #selector(ViewController.animateBackground),
+                                                                          userInfo: nil,
+                                                                          repeats: true)
+        }
+        self.sendStatusSignal()
     }
     
     /**

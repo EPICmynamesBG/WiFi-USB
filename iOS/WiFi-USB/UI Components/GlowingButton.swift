@@ -112,7 +112,33 @@ class GlowingButton: UIButton {
     }
     
     /**
-     start the time that calls the glow animmation function
+     Parent override, used to set up notifications for app close/resume
+     
+     - parameter frame: CGRect
+     
+     - returns: self
+     */
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppMinimize), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppResume), name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    /**
+     Parent override, used to set up notifications for app close/resume
+     
+     - parameter aDecoder: NSCoder
+     
+     - returns: self
+     */
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppMinimize), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.onAppResume), name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    /**
+     start the timer that calls the glow animmation function
      */
     func animateGlow () {
         self.animatedGlowTimer = NSTimer.scheduledTimerWithTimeInterval(Defaults.AnimateGlowRate + 0.001,
@@ -143,6 +169,25 @@ class GlowingButton: UIButton {
             }
         }) { (completed:Bool) in
             //nothing
+        }
+    }
+    
+    /**
+     Stop animations, clear timer when app is going to background
+     */
+    @objc private func onAppMinimize() {
+        if (self.animatedGlow) {
+            self.animatedGlowTimer?.invalidate()
+            self.animatedGlowTimer = nil
+        }
+    }
+    
+    /**
+     Resume animations as needed when app resumes
+     */
+    @objc private func onAppResume() {
+        if (self.animatedGlowTimer == nil && self.animatedGlow) {
+            self.animateGlow()
         }
     }
 
