@@ -23,7 +23,7 @@ class GlowingButton: UIButton {
         case Growing
         case Shrinking
     }
-
+    
     private var glowRadius: CGFloat = Defaults.GlowRadius {
         didSet {
             self.titleLabel?.layer.shadowRadius = self.glowRadius
@@ -113,4 +113,5 @@ class GlowingButton: UIButton {
             //nothing
         }
     }
+
 }

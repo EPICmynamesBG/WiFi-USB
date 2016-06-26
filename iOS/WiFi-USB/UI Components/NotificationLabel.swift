@@ -8,10 +8,11 @@
 
 import UIKit
 
-class FadeLabel: UILabel {
+class NotificationLabel: UILabel {
     
     private var tempShowingTime: NSTimeInterval? = nil
     private var showTimer: NSTimer?
+    private var showing: Bool = false
     
     override var hidden: Bool {
         didSet {
@@ -23,23 +24,39 @@ class FadeLabel: UILabel {
         }
     }
     
+    private func parentBottom () -> CGFloat{
+        if (self.superview?.frame.size.height != nil) {
+            return self.superview!.frame.size.height
+        }
+        
+        return 200.0
+    }
+    
     @objc private func fadeOut() {
-        UIView.animateWithDuration(0.75, animations: { 
+        self.alpha = 0.8
+        UIView.animateWithDuration(1.0, delay: 0, options: .CurveEaseInOut, animations: {
             self.alpha = 0.0
+            self.frame.origin.y = self.parentBottom() + self.frame.size.height
         }) { (complete: Bool) in
             if (self.showTimer != nil) {
                 self.showTimer!.invalidate()
                 self.showTimer = nil
             }
+            
             super.hidden = true
         }
+
     }
     
     private func fadeIn() {
+        
+        self.alpha = 0.0
         super.hidden = false
-        UIView.animateWithDuration(0.75, animations: { 
-            self.alpha = 1.0
-        }) { (complete:Bool) in
+        self.frame.origin.y = self.parentBottom() + self.frame.size.height
+        UIView.animateWithDuration(1.0, delay: 0, options: .CurveEaseInOut, animations: {
+            self.alpha = 0.8
+            self.frame.origin.y = self.parentBottom() - self.frame.size.height - 20
+        }) { (complete: Bool) in
             if (self.tempShowingTime != nil) {
                 self.showTimer = NSTimer.scheduledTimerWithTimeInterval(self.tempShowingTime!,
                                                                         target: self,
@@ -48,7 +65,9 @@ class FadeLabel: UILabel {
                                                                         repeats: false)
                 self.tempShowingTime = nil
             }
+            
         }
+        
     }
     
     func showForDuration(time: NSTimeInterval) {
@@ -71,4 +90,5 @@ class FadeLabel: UILabel {
         origSize.height = origSize.height + 10
         return origSize
     }
+    
 }

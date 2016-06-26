@@ -25,7 +25,8 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
     @IBOutlet weak var rebootButton: GlowingButton!
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var infoViewContainer: UIView!
-    @IBOutlet weak var notificationLabel: FadeLabel!
+    @IBOutlet weak var notificationLabel: NotificationLabel!
+    @IBOutlet weak var statusButton: GlowingButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
                                                                       selector: #selector(ViewController.animateBackground),
                                                                       userInfo: nil,
                                                                       repeats: true)
-        self.networker?.getStatus()
+        self.sendStatusSignal()
 
     }
     
@@ -58,6 +59,9 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func statusRefresh(sender: UIButton) {
+        self.sendStatusSignal()
+    }
     
     @IBAction func togglePowerButtonTap(sender: GlowingButton) {
         self.sendToggleSignal()
@@ -106,15 +110,17 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         }
     }
     
+    private func sendStatusSignal() {
+        self.networker?.getStatus()
+        self.disableButtons()
+    }
+    
     private func sendRebootSignal() {
         self.networker?.reboot()
         self.disableButtons()
     }
     
     private func sendToggleSignal() {
-        if (self.togglePowerButton.enabled == false) {
-            print("Button disabled, but tapped")
-        }
         self.networker?.togglePower()
         self.disableButtons()
     }
@@ -124,6 +130,7 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         self.togglePowerButton.tintColor = UIColor.darkGrayColor()
         self.rebootButton.enabled = false
         self.rebootButton.tintColor = UIColor.darkGrayColor()
+        self.statusButton.enabled = false
     }
     
     private func enableButtons() {
@@ -141,11 +148,13 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         self.togglePowerButton.enabled = true
         self.rebootButton.enabled = true
         self.rebootButton.tintColor = ColorPalette.Primary.Normal
+        self.statusButton.enabled = true
+        
     }
     
     func showNotification(message: String) {
         self.notificationLabel.text = message
-        self.notificationLabel.showForDuration(3.0)
+        self.notificationLabel.showForDuration(4.0)
     }
     
     /* ----- WiFiUSBNetworkerDelegate Functions ----- */
@@ -167,6 +176,7 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         if (!self.networker!.rebooting) {
             self.showNotification(message!)
         }
+        self.statusButton.enabled = true
     }
     
     func WiFiUSBRebootComplete(statusResponse: JsonResponse) {
