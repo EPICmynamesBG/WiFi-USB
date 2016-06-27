@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button,
+input[type="button"],
+button:focus,
+input[type="button"]:focus {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.background-animate {
+    -webkit-animation: animate_bg 72s;
+    animation: animate_bg 72s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate_bg {
+    0%   {background:#0ADE0D;}
+    7.7%   {background:#EAFFFF;}
+    15.4%   {background:#94FFFF;}
+    23.1%   {background:#0794FF;}
+    30.8%   {background:#E188FF;}
+    38.5%   {background:#FE1C4D;}
+    46.2%   {background:#EAFFFF;}
+    53.9%   {background:#0794FF;}
+    61.6%   {background:#AA88FF;}
+    69.3%   {background:#EAFFFF;}
+    77%   {background:#35FFEE;}
+    84.7%   {background:#5ADFA5;}
+    92.4%   {background:#84F11C;}
+    100%   {background:#0ADE0D;}
+}
+
+@-webkit-keyframes animate_bg {
+    0%   {background:#0ADE0D;}
+    7.7%   {background:#EAFFFF;}
+    15.4%   {background:#94FFFF;}
+    23.1%   {background:#0794FF;}
+    30.8%   {background:#E188FF;}
+    38.5%   {background:#FE1C4D;}
+    46.2%   {background:#EAFFFF;}
+    53.9%   {background:#0794FF;}
+    61.6%   {background:#AA88FF;}
+    69.3%   {background:#EAFFFF;}
+    77%   {background:#35FFEE;}
+    84.7%   {background:#5ADFA5;}
+    92.4%   {background:#84F11C;}
+    100%   {background:#0ADE0D;}
+}
+
+#reboot {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    background-color: transparent;
+    border-radius: 10px 10px;
+    border: 1px solid #FFFD10;
+    color: #FFFD10;
+    padding: 7px 5px;
+    font-size: 1em;
+    animation: reboot_glow 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#reboot img {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    margin-right: 7px;
+    filter: drop-shadow(0px 0px 7px #161819);
+    -webkit-filter: url("./reboot-button-web_64.png");
+    -webkit-animation: reboot_img_glow 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+
+@keyframes reboot_glow {
+    0% {text-shadow: 0px 0px 1px #161819;}
+    100% {text-shadow: 0px 0px 7px #161819;}
+}
+
+@-webkit-keyframes reboot_img_glow {
+    0% {-webkit-filter: drop-shadow(0px 0px 1px #161819);}
+    100% {-webkit-filter: drop-shadow(0px 0px 7px #161819);}
+}
+
+#toggle-power {
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 25em;
+    width: 25em;
+    padding: 10px;
+    overflow: visible;
+}
+
+#toggle-power img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 23em;
+    width: 23em;
+    padding: 10px;
+    overflow: visible;
+}
+
+#toggle-power img.power-on {
+    filter: drop-shadow(0px 0px 7px #161819);
+    -webkit-filter: url("./power_button_green_512.png");
+    -webkit-animation: power_on_glow 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+
+#toggle-power img.power-off {
+    filter: drop-shadow(0px 0px 7px #EEEEEE);
+    -webkit-filter: url("./power_button_red_512.png");
+    -webkit-animation: power_off_glow 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+
+@-webkit-keyframes power_on_glow {
+    0% {-webkit-filter: drop-shadow(0px 0px 1px #161819);}
+    100% {-webkit-filter: drop-shadow(0px 0px 7px #161819);}
+}
+
+@-webkit-keyframes power_off_glow {
+    0% {-webkit-filter: drop-shadow(0px 0px 1px #EEEEEE);}
+    100% {-webkit-filter: drop-shadow(0px 0px 7px #EEEEEE);}
+}
