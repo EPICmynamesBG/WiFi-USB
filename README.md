@@ -73,6 +73,11 @@ _Reboot the device_
   * `description: String` - a textual confirmation that the device is rebooting
 
 
+## Future Ideas ##
+* Add a timer/alarm clock ability. Turn on/off at a set time!
+* Create an Apple Watch extensnion
+
+
 ## Credits ##
 
 
