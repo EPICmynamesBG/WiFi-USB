@@ -31,8 +31,8 @@
         <button type="button" id="update-status" title="Refresh power status" onclick="updateStatus()">Update Status</button>
     </div>
     <button type="button" id="info" title="About WiFi-USB" onclick="showInfo()"><img src="./images/info-icon.png" /></button>
+    
     <div class="info-overlay">
-        <div class="rel-container">
             <button type="button" id="info-close" onclick="hideInfo()">Close</button>
             <h1>WiFi-USB</h1>
             <h3 class="about">About</h3>
@@ -45,7 +45,10 @@
             <a class="button view-on-github" href="https://github.com/EPICmynamesBG/WiFi-USB" target="_blank">View on Github</a>
             <br/>
             <h5>Web Version 0.1</h5>
-        </div>
+    </div>
+    
+    <div id="toast">
+        This is a toast
     </div>
 </body>
 </html>

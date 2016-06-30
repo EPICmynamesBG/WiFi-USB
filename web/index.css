@@ -319,6 +319,8 @@ button:active img {
     }
 }
 
+/* ----- Info Button ----- */
+
 #info {
     position: absolute;
     top: 13px;
@@ -337,6 +339,53 @@ button:active img {
     background: radial-gradient(circle closest-side, #EEEEEE, transparent);
 }
 
+/* ----- Toast ----- */
+
+#toast {
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 5px 25px;
+    border-radius: 20px 20px;
+    height: auto;
+    opacity: 0.0;
+    background-color: #161819;
+    color: #EEEEEE;
+    text-align: center;
+    transition-duration: 1s;
+}
+
+.toast-show {
+    animation-duration: 1s;
+    animation-name: show_toast;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    opacity: 0.9 !important;
+    bottom: 30px !important;
+}
+
+.toast-hide {
+    animation-duration: 1s;
+    animation-name: show_toast;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    opacity: 0.0 !important;
+    bottom: -100px !important;
+}
+
+@keyframes show_toast {
+    from {
+        opacity: 0.0;
+        bottom: -100px;
+    }
+    to {
+        opacity: 0.9;
+        bottom: 30px;
+    }
+}
 
 /* ---- Info Overlay ---- */
 
@@ -351,17 +400,7 @@ div.info-overlay {
     -webkit-overflow-scrolling: touch
 }
 
-div.rel-container {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    margin: 0px;
-    /*    margin-top: -16px;*/
-}
-
-div.rel-container * {
+div.info-overlay * {
     text-align: center;
     color: white;
     display: block;

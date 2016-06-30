@@ -1,8 +1,7 @@
-var powerIsOn = true;
-
+//TODO: Remove JQuery, just use CSS3 animatinos?
 $(document).ready(function(){
    $(".info-overlay").hide();
-    setPowerButtonColor(powerIsOn);
+    updateStatus();
 });
 
 function showInfo() {
@@ -26,9 +25,26 @@ function setPowerButtonColor(powerIsOn) {
     }
 }
 
+function showToast(message) {
+    var toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "toast-show";
+//    toast.style.bottom = "30px";
+//    toast.style.opacity = "0.9";
+    setTimeout(hideToast, 4000);
+}
+
+function hideToast() {
+    var toast = document.getElementById("toast");
+    toast.className = "toast-hide";
+//    toast.style.bottom = "-100px";
+//    toast.style.opacity = "0.0";
+}
+
 function sendRequestTo(endpoint, withMethod) {
     let success = function(data) {
-        console.log(data);
+        setPowerButtonColor(data.on);
+        showToast(data.description);
     }
     
     $.ajax({
@@ -40,16 +56,13 @@ function sendRequestTo(endpoint, withMethod) {
 }
 
 function reboot() {
-    console.log("Reboot");
+    sendRequestTo("/reboot", "GET");
 }
 
 function togglePower() {
-    console.log("toggle power");
-    powerIsOn = !powerIsOn;
-    setPowerButtonColor(powerIsOn);
+    sendRequestTo("/toggle", "POST");
 }
 
 function updateStatus() {
-    console.log("status update");
-    alert("Power is on="+ powerIsOn);
+    sendRequestTo("/status", "GET");
 }
