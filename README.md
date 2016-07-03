@@ -13,7 +13,7 @@ _Web App Version_: 0.1
 
 _What is WiFi-USB?_
 
-WiFi-USB is an IoT device and software that enables a USB powered device (up to 1A) to be remotely powered on and off.
+WiFi-USB is an IoT device and software that enables a USB powered device (up to 2.0 A) to be remotely powered on and off.
 
 _Why WiFi-USB?_
 
