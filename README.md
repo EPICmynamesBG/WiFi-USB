@@ -1,9 +1,6 @@
 # WiFi-USB - DEV #
 A wirelessly controllable USB power port
 
-
-_Hardware Version:_ 1.1
-
 _Firmware Version:_ 1.0
 
 _iOS App Version_: 0.3
@@ -28,13 +25,7 @@ Keep reading below for more on how to build your own WiFi-USB board, and instruc
 
 ## Hardware ##
 
-_Soldering iron and solder required for assembly_
-
-* Custom Board
-  * use [Eagle](http://www.cadsoftusa.com/download-eagle/) to view the board files in the hardware folder
-  * boards can be ordered through [OSH Park](https://oshpark.com/)
-* Ardiuno ESP8266
-* MORE
+Files will be posted soon.
 
 ## Firmware Install ##
 
@@ -84,9 +75,6 @@ _Reboot the device_
 [Alex Cordonnier](https://github.com/ajcord) - for designing the board and helping me troubleshoot every step of the way!
 
 ## Licenses ##
-
-
-[_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
 
 [_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : GNU GPLv3
 
