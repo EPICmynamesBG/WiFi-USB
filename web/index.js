@@ -42,7 +42,7 @@ function hideToast() {
 }
 
 function sendRequestTo(endpoint, withMethod) {
-    let success = function(data) {
+    var success = function(data) {
         setPowerButtonColor(data.on);
         showToast(data.description);
     }
