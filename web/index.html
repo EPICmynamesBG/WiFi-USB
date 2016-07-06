@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WiFi-USB v1.0</title>
+    <link rel=icon href="./images/favicon.png" />
+	<!-- Meta Tags -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Language" lang="en" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    
+    
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+    
+<!--
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript" ></script>
+-->
+    <script src="./dev-temp/jquery-2.2.4.min.js"></script>
+    <script src="./dev-temp/jquery.mobile-1.4.5.min.js"></script>
+    <script src="./index.js" type="text/javascript"></script>
+</head>
+<body class="background-animate">
+    <button type="button" id="reboot" title="Reboot WiFi-USB" onclick="reboot()"><img src="./images/reboot-button-web_64.png" />Reboot</button>
+    <div class="centered">
+        <button type="button" id="toggle-power" onclick="togglePower()">
+            <div class="power-toggle power-on" title="Power is On"></div>
+        </button>
+        <button type="button" id="update-status" title="Refresh power status" onclick="updateStatus()">Update Status</button>
+    </div>
+    <button type="button" id="info" title="About WiFi-USB" onclick="showInfo()"><img src="./images/info-icon.png" /></button>
+    
+    <div class="info-overlay">
+            <button type="button" id="info-close" onclick="hideInfo()">Close</button>
+            <h1>WiFi-USB</h1>
+            <h3 class="about">About</h3>
+            <p>WiFi-USB is a publicly available combination of hardware and software tha allows people to remotely power on/off any device that is powered by a 5V USB port.</p>
+            <br/>
+            <h3>Creators</h3>
+            <h4><a href="https://github.com/ajcord" target="_blank">Alex Cordonnier - Hardware</a></h4>
+            <h4><a href="https://github.com/EPICmynamesBG" target="_blank">Brandon Groff - Firmware, iOS, Web</a></h4>
+            <br/>
+            <a class="button view-on-github" href="https://github.com/EPICmynamesBG/WiFi-USB" target="_blank">View on Github</a>
+            <br/>
+            <h5>Web Version 0.1</h5>
+    </div>
+    
+    <div id="toast">
+        This is a toast
+    </div>
+</body>
+</html>
