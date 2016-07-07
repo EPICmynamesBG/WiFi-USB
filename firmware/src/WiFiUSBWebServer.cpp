@@ -7,6 +7,7 @@
 
 #include "WiFiUSBWebServer.h"
 #include "config.h"
+#include "FS.h"
 
 WiFiUSBWebServer::WiFiUSBWebServer() 
     : server(80) { };
@@ -16,10 +17,17 @@ void WiFiUSBWebServer::begin() {
     
     mdns.begin(WEBSERVER_DOMAIN, WiFi.localIP());
     
-    server.on("/", [this]() {
-        String response = "<!DOCTYPE HTML>\r\n<html><body><h1>Welcome to WiFi USB v1.0 [firmware]</h1></body></html>";
-        server.send(200, "text/html", response);
-    });
+    SPIFFS.begin();
+    
+    server.serveStatic("/", SPIFFS, "/index.html", "max-age=86400");
+    server.serveStatic("/index.css", SPIFFS, "/index.css", "max-age=86400");
+    server.serveStatic("/index.js", SPIFFS, "/index.js", "max-age=86400");
+    server.serveStatic("/images/favicon.png", SPIFFS, "/favicon.png", "max-age=86400");
+    server.serveStatic("/images/info-icon.png", SPIFFS, "/info-icon.png", "max-age=86400");
+    server.serveStatic("/images/power_button_gray_512.png", SPIFFS, "/power_button_gray_512.png", "max-age=86400");
+    server.serveStatic("/images/power_button_green_512.png", SPIFFS, "/power_button_green_512.png", "max-age=86400");
+    server.serveStatic("/images/power_button_red_512.png", SPIFFS, "/power_button_red_512.png", "max-age=86400");
+    server.serveStatic("/images/reboot-button-web_64.png", SPIFFS, "/reboot-button-web_64.png", "max-age=86400");
     
     server.on("/status", HTTP_GET, [this] {
         handleStatus();
@@ -74,6 +82,7 @@ void WiFiUSBWebServer::handleReboot() {
     String json = "{\"description\": \"Rebooting NOW\"}";
     server.send(200, "application/json", json);
     Serial.println("System is rebooting NOW");
+    SPIFFS.end();
     ESP.restart();
 }
 

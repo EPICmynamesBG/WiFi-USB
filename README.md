@@ -1,9 +1,6 @@
 # WiFi-USB - DEV #
 A wirelessly controllable USB power port
 
-
-_Hardware Version:_ 1.1
-
 _Firmware Version:_ 1.0
 
 _iOS App Version_: 0.3
@@ -16,7 +13,7 @@ _Web App Version_: 0.1
 
 _What is WiFi-USB?_
 
-WiFi-USB is an IoT based device and software that enables a USB powered device (up to 5V) to be remotely powered on and off.
+WiFi-USB is an IoT device and software that enables a USB powered device (up to 2.0 A) to be remotely powered on and off.
 
 _Why WiFi-USB?_
 
@@ -28,23 +25,16 @@ Keep reading below for more on how to build your own WiFi-USB board, and instruc
 
 ## Hardware ##
 
-_Soldering iron and solder required for assembly_
-
-* Custom Board
-  * use [Eagle](http://www.cadsoftusa.com/download-eagle/) to view the board files in the hardware folder
-  * boards can be ordered through [OSH Park](https://oshpark.com/)
-* Ardiuno ESP8266
-* MORE
+Files and instructions will be posted soon.
 
 ## Firmware Install ##
 
 
-1. Download and install the [Ardiuno IDE](https://www.arduino.cc/en/Main/Software)
-2. Configure the IDE
-  * Configuration steps HERE
+1. Download and install the [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+2. Configure the IDE using the instructions [here](https://github.com/esp8266/arduino#installing-with-boards-manager)
 3. Download the zip/clone this repo
 4. In `config.h` update the SSID and SSID_PASSWORD variables to match your network configuration.
-5. Open `firmware.imo` and click upload in the Arduino IDE
+5. Open `firmware.ino` and click upload in the Arduino IDE
 
 ## Using WiFi-USB ##
 
@@ -73,15 +63,17 @@ _Reboot the device_
   * `description: String` - a textual confirmation that the device is rebooting
 
 
+## Future Ideas ##
+* Add a timer/alarm clock ability. Turn on/off at a set time!
+* Create an Apple Watch extensnion
+
+
 ## Credits ##
 
 
 [Alex Cordonnier](https://github.com/ajcord) - for designing the board and helping me troubleshoot every step of the way!
 
 ## Licenses ##
-
-
-[_hardware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/hardware/LICENSE) : Copyright 2016 Alex Cordonnier. All rights reserved.
 
 [_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : GNU GPLv3
 
