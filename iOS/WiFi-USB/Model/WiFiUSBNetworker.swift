@@ -181,7 +181,9 @@ class WiFiUSBNetworker {
      */
     private func dataTaskComplete (response: JsonResponse) {
         self.currentDataTask = nil
+        #if os(iOS)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        #endif
         if self.RebootIgnoreFirstResponseFlag {
             self.RebootIgnoreFirstResponseFlag = false
         } else {
@@ -216,7 +218,9 @@ class WiFiUSBNetworker {
             self.requestTimeoutTimer = nil
         }
         self.currentDataTask = datatask
+        #if os(iOS)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        #endif
         self.currentDataTask?.resume()
         self.requestTimeoutTimer = NSTimer.scheduledTimerWithTimeInterval(WiFiUSBNetworker.RequestTimeoutTime, target: self, selector: #selector(self.requestTimeout), userInfo: nil, repeats: false)
     }
@@ -269,7 +273,9 @@ class WiFiUSBNetworker {
             self.delegate?.WiFiUSBRequestError(error, message: message)
         }
         self.currentDataTask = nil
+        #if os(iOS)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        #endif
     }
     
 }
