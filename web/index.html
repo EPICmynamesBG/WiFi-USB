@@ -3,13 +3,14 @@
 <head>
     <title>WiFi-USB v1.0</title>
     <link rel=icon href="./images/favicon.png" />
+    <link rel="apple-touch-icon" href="./images/app-icon.png">
 	<!-- Meta Tags -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Language" lang="en" />
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-    
     
     <link href="./index.css" rel="stylesheet" type="text/css" />
     
@@ -22,7 +23,7 @@
 -->
     <script src="./index.js" type="text/javascript"></script>
 </head>
-<body class="background-animate">
+<body class="background-animate disable-scrolling">
     <button type="button" id="reboot" title="Reboot WiFi-USB" onclick="reboot()"><img src="./images/reboot-button-web_64.png" />Reboot</button>
     <div class="centered">
         <button type="button" id="toggle-power" onclick="togglePower()">
@@ -32,7 +33,7 @@
     </div>
     <button type="button" id="info" title="About WiFi-USB" onclick="showInfo()"><img src="./images/info-icon.png" /></button>
     
-    <div class="info-overlay">
+    <div class="info-overlay scrollable">
             <button type="button" id="info-close" onclick="hideInfo()">Close</button>
             <h1>WiFi-USB</h1>
             <h3 class="about">About</h3>
@@ -44,7 +45,7 @@
             <br/>
             <a class="button view-on-github" href="https://github.com/EPICmynamesBG/WiFi-USB" target="_blank">View on Github</a>
             <br/>
-            <h5>Web Version 0.1</h5>
+            <h5>Web Version 0.2</h5>
     </div>
     
     <div id="toast">

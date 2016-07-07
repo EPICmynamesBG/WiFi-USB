@@ -220,28 +220,30 @@ button:active img {
     height: 24em;
     width: 24em;
     padding: 10px;
-    border: 
+    border: none;
     overflow: visible;
     transition: 0.2s;
     background-size: 22em 22em !important;
+    animation-iteration-count: infinite !important;
+    animation-direction: alternate !important;
+    -webkit-animation-iteration-count: infinite !important;
+    -webkit-animation-direction: alternate !important;
 }
 
 #toggle-power .power-on {
     background: url("./images/power_button_green_512.png") no-repeat center;
     filter: drop-shadow(0px 0px 7px #161819);
+    animation: power_on_glow 3s;
     -webkit-filter: url("./images/power_button_green_512.png");
     -webkit-animation: power_on_glow 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
 }
 
 #toggle-power .power-off {
     background: url("./images/power_button_red_512.png")  no-repeat center;
     filter: drop-shadow(0px 0px 7px #EEEEEE);
+    animation: power_off_glow 3s;
     -webkit-filter: url("./images/power_button_red_512.png");
     -webkit-animation: power_off_glow 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
 }
 
 #toggle-power .power-toggle:active {
@@ -281,18 +283,22 @@ button:active img {
 
 @-webkit-keyframes power_on_glow {
     0% {
+        filter: drop-shadow(0px 0px 1px #161819);
         -webkit-filter: drop-shadow(0px 0px 1px #161819);
     }
     100% {
+        filter: drop-shadow(0px 0px 1px #161819);
         -webkit-filter: drop-shadow(0px 0px 7px #161819);
     }
 }
 
 @-webkit-keyframes power_off_glow {
     0% {
+        filter: drop-shadow(0px 0px 1px #EEEEEE);
         -webkit-filter: drop-shadow(0px 0px 1px #EEEEEE);
     }
     100% {
+        filter: drop-shadow(0px 0px 1px #EEEEEE);
         -webkit-filter: drop-shadow(0px 0px 7px #EEEEEE);
     }
 }
@@ -343,7 +349,7 @@ button:active img {
 
 #toast {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
@@ -365,6 +371,7 @@ button:active img {
     animation-direction: normal;
     opacity: 0.9 !important;
     bottom: 30px !important;
+    z-index: 3;
 }
 
 .toast-hide {
@@ -396,7 +403,7 @@ div.info-overlay {
     background-color: rgba(0, 0, 0, 0.7);
     display: block;
     transition-duration: 0.75;
-    overflow: scroll;
+    overflow: auto;
     -webkit-overflow-scrolling: touch
 }
 
@@ -409,7 +416,7 @@ div.info-overlay * {
     font-weight: 200;
     letter-spacing: 0.035em;
     line-height: 1.2em;
-    overflow-y: visible;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
