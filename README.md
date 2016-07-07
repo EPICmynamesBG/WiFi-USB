@@ -3,7 +3,7 @@ A wirelessly controllable USB power port
 
 _Firmware Version:_ 1.1
 
-_iOS App Version_: 0.3
+_iOS App Version_: 0.4
 
 _Web App Version_: 0.2
 
@@ -65,7 +65,7 @@ _Reboot the device_
 
 ## Future Ideas ##
 * Add a timer/alarm clock ability. Turn on/off at a set time!
-* Create an Apple Watch extensnion
+* Create an Apple Watch extensnion (IN PROGRESS)
 
 
 ## Credits ##
