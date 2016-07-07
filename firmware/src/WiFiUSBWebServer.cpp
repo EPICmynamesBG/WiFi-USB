@@ -1,7 +1,7 @@
 /**
 * WiFi-USB: a wirelessly controllable USB power port
 * Author: Brandon Groff
-* Version: 1.0
+* Version: 1.1
 * License: GNU GPLv3 (see LICENSE)
 */
 
@@ -28,6 +28,7 @@ void WiFiUSBWebServer::begin() {
     server.serveStatic("/images/power_button_green_512.png", SPIFFS, "/power_button_green_512.png", "max-age=86400");
     server.serveStatic("/images/power_button_red_512.png", SPIFFS, "/power_button_red_512.png", "max-age=86400");
     server.serveStatic("/images/reboot-button-web_64.png", SPIFFS, "/reboot-button-web_64.png", "max-age=86400");
+    server.serveStatic("/images/app-icon.png", SPIFFS, "/app-icon.png", "max-age=86400");
     
     server.on("/status", HTTP_GET, [this] {
         handleStatus();
@@ -82,7 +83,6 @@ void WiFiUSBWebServer::handleReboot() {
     String json = "{\"description\": \"Rebooting NOW\"}";
     server.send(200, "application/json", json);
     Serial.println("System is rebooting NOW");
-    SPIFFS.end();
     ESP.restart();
 }
 

@@ -1,11 +1,11 @@
 # WiFi-USB - DEV #
 A wirelessly controllable USB power port
 
-_Firmware Version:_ 1.0
+_Firmware Version:_ 1.1
 
 _iOS App Version_: 0.3
 
-_Web App Version_: 0.1
+_Web App Version_: 0.2
 
 ---
 
