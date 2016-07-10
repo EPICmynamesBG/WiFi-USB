@@ -23,6 +23,11 @@ _How can I use WiFi-USB?_
 
 Keep reading below for more on how to build your own WiFi-USB board, and instructions on how to install the firmware to get your device up and running.
 
+## Important Notes ##
+
+** Never plug both the mini-USB power supply and the FTDI power at the same time. The hardware is not designed to handle this and will surely break **
+
+
 ## Hardware ##
 
 Files and instructions will be posted soon.
@@ -34,12 +39,27 @@ Files and instructions will be posted soon.
 2. Configure the IDE using the instructions [here](https://github.com/esp8266/arduino#installing-with-boards-manager)
 3. Download the zip/clone this repo
 4. In `config.h` update the SSID and SSID_PASSWORD variables to match your network configuration.
-5. Open `firmware.ino` and click upload in the Arduino IDE
+5. Open `firmware.ino` and click upload in the Arduino IDE when the device is in develop mode
+
+## Web Install ##
+
+The appropriate web files are already in the WiFi-USB's firmware > data folder. Simply follow [this guide](https://github.com/esp8266/arduino-esp8266fs-plugin) on how to install and upload the those files to WiFi-USB for the web control panel to become available.
+
+## Installing the iOS & Watch app (Requires a Mac) ##
+
+1. Install [XCode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) on your system
+  - Built using XCode 7.3.1
+2. Open  WiFi-USB.xcodeproj
+3. Select the Project (the blue icon) from the Nvigation bar
+  - Under Targets, change the team on each one to the team of your desire (probably personal or None)
+4. Now plug in your device, and click the Play arrow to Run the app on your device
+  - If you have a watch, to install the watch app, on the bar next to the run button, select WK-WiFi-USB as your build target, then selecte your device with watch, and hit Run 
+
 
 ## Using WiFi-USB ##
 
 
-The default endpoint for WiFi-USB will be http://wifiusb.local. Going to this page will show you a simple html page, confirming that the wifiusb is running.
+The default endpoint for WiFi-USB will be [http://wifiusb.local](http://wifiusb.local). Going to this page will show you a simple html page, confirming that the wifiusb is running.
 
 WiFi-USB is configured with 3 REST endpoints that will return JSON data:
 
@@ -65,7 +85,8 @@ _Reboot the device_
 
 ## Future Ideas ##
 * Add a timer/alarm clock ability. Turn on/off at a set time!
-* Create an Apple Watch extensnion (IN PROGRESS)
+* ~~Create an Apple Watch extensnion ~~
+* Add WebSocket ability for live status sync across all controller devices
 
 
 ## Credits ##
