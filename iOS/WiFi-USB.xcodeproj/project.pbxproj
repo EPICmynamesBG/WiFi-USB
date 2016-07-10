@@ -7,20 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC872CFE1D2DFE5E00C1D993 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC872CFC1D2DFE5E00C1D993 /* Interface.storyboard */; };
-		BC872D001D2DFE5E00C1D993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC872CFF1D2DFE5E00C1D993 /* Assets.xcassets */; };
-		BC872D071D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BC872D061D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BC872D0E1D2DFE5E00C1D993 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC872D0D1D2DFE5E00C1D993 /* InterfaceController.swift */; };
-		BC872D101D2DFE5E00C1D993 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC872D0F1D2DFE5E00C1D993 /* ExtensionDelegate.swift */; };
-		BC872D141D2DFE5E00C1D993 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC872D131D2DFE5E00C1D993 /* GlanceController.swift */; };
-		BC872D181D2DFE5E00C1D993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC872D171D2DFE5E00C1D993 /* Assets.xcassets */; };
-		BC872D1C1D2DFE5E00C1D993 /* WK-WiFi-USB.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BC872CFA1D2DFE5E00C1D993 /* WK-WiFi-USB.app */; };
-		BC872D251D2DFF4800C1D993 /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */; };
-		BC872D271D2DFF6A00C1D993 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */; };
-		BC872D281D2DFF6E00C1D993 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8B1D1FAA5800A981CB /* ColorPalette.swift */; };
-		BC872D2F1D2E088800C1D993 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */; };
-		BC872D331D2E24D900C1D993 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC872D321D2E24D900C1D993 /* ComplicationController.swift */; };
-		BC872D341D2E24D900C1D993 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC872D321D2E24D900C1D993 /* ComplicationController.swift */; };
+		BCC392101D32EC1C00D889F6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC3920E1D32EC1C00D889F6 /* Interface.storyboard */; };
+		BCC392121D32EC1C00D889F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC392111D32EC1C00D889F6 /* Assets.xcassets */; };
+		BCC392191D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BCC392181D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCC3921E1D32EC1C00D889F6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3921D1D32EC1C00D889F6 /* InterfaceController.swift */; };
+		BCC392201D32EC1C00D889F6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3921F1D32EC1C00D889F6 /* ExtensionDelegate.swift */; };
+		BCC392241D32EC1C00D889F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC392231D32EC1C00D889F6 /* Assets.xcassets */; };
+		BCC392281D32EC1C00D889F6 /* WK-WiFi-USB.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BCC3920C1D32EC1C00D889F6 /* WK-WiFi-USB.app */; };
+		BCC392301D32ED1500D889F6 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8B1D1FAA5800A981CB /* ColorPalette.swift */; };
+		BCC392311D32ED1800D889F6 /* JsonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */; };
+		BCC392321D32ED2000D889F6 /* WiFiUSBNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */; };
+		BCC392331D32EED400D889F6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */; };
 		BCCFBE761D1FA98600A981CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE751D1FA98600A981CB /* AppDelegate.swift */; };
 		BCCFBE781D1FA98600A981CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFBE771D1FA98600A981CB /* ViewController.swift */; };
 		BCCFBE7B1D1FA98600A981CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCFBE791D1FA98600A981CB /* Main.storyboard */; };
@@ -40,60 +37,57 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BC872D081D2DFE5E00C1D993 /* PBXContainerItemProxy */ = {
+		BCC3921A1D32EC1C00D889F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCCFBE6A1D1FA98600A981CB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC872D051D2DFE5E00C1D993;
+			remoteGlobalIDString = BCC392171D32EC1C00D889F6;
 			remoteInfo = "WK-WiFi-USB Extension";
 		};
-		BC872D1A1D2DFE5E00C1D993 /* PBXContainerItemProxy */ = {
+		BCC392261D32EC1C00D889F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCCFBE6A1D1FA98600A981CB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BC872CF91D2DFE5E00C1D993;
+			remoteGlobalIDString = BCC3920B1D32EC1C00D889F6;
 			remoteInfo = "WK-WiFi-USB";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BC872D201D2DFE5E00C1D993 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				BC872D071D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BC872D241D2DFE5E00C1D993 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				BC872D1C1D2DFE5E00C1D993 /* WK-WiFi-USB.app in Embed Watch Content */,
+				BCC392281D32EC1C00D889F6 /* WK-WiFi-USB.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC3922C1D32EC1C00D889F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BCC392191D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BC872CFA1D2DFE5E00C1D993 /* WK-WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WK-WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC872CFD1D2DFE5E00C1D993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		BC872CFF1D2DFE5E00C1D993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC872D011D2DFE5E00C1D993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC872D061D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WK-WiFi-USB Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC872D0C1D2DFE5E00C1D993 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		BC872D0D1D2DFE5E00C1D993 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		BC872D0F1D2DFE5E00C1D993 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		BC872D131D2DFE5E00C1D993 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		BC872D171D2DFE5E00C1D993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC872D191D2DFE5E00C1D993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC872D321D2E24D900C1D993 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		BCC3920C1D32EC1C00D889F6 /* WK-WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WK-WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC3920F1D32EC1C00D889F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		BCC392111D32EC1C00D889F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCC392131D32EC1C00D889F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC392181D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WK-WiFi-USB Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC3921D1D32EC1C00D889F6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		BCC3921F1D32EC1C00D889F6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		BCC392231D32EC1C00D889F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCC392251D32EC1C00D889F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCCFBE721D1FA98600A981CB /* WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCFBE751D1FA98600A981CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCFBE771D1FA98600A981CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +109,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC872D031D2DFE5E00C1D993 /* Frameworks */ = {
+		BCC392151D32EC1C00D889F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,44 +126,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC872CFB1D2DFE5E00C1D993 /* WK-WiFi-USB */ = {
+		BCC3920D1D32EC1C00D889F6 /* WK-WiFi-USB */ = {
 			isa = PBXGroup;
 			children = (
-				BC872CFC1D2DFE5E00C1D993 /* Interface.storyboard */,
-				BC872CFF1D2DFE5E00C1D993 /* Assets.xcassets */,
-				BC872D011D2DFE5E00C1D993 /* Info.plist */,
+				BCC3920E1D32EC1C00D889F6 /* Interface.storyboard */,
+				BCC392111D32EC1C00D889F6 /* Assets.xcassets */,
+				BCC392131D32EC1C00D889F6 /* Info.plist */,
 			);
 			path = "WK-WiFi-USB";
 			sourceTree = "<group>";
 		};
-		BC872D0A1D2DFE5E00C1D993 /* WK-WiFi-USB Extension */ = {
+		BCC3921C1D32EC1C00D889F6 /* WK-WiFi-USB Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BC872D0D1D2DFE5E00C1D993 /* InterfaceController.swift */,
-				BC872D0F1D2DFE5E00C1D993 /* ExtensionDelegate.swift */,
-				BC872D131D2DFE5E00C1D993 /* GlanceController.swift */,
-				BC872D321D2E24D900C1D993 /* ComplicationController.swift */,
-				BC872D171D2DFE5E00C1D993 /* Assets.xcassets */,
-				BC872D191D2DFE5E00C1D993 /* Info.plist */,
-				BC872D0B1D2DFE5E00C1D993 /* Supporting Files */,
+				BCC3921D1D32EC1C00D889F6 /* InterfaceController.swift */,
+				BCC3921F1D32EC1C00D889F6 /* ExtensionDelegate.swift */,
+				BCC392231D32EC1C00D889F6 /* Assets.xcassets */,
+				BCC392251D32EC1C00D889F6 /* Info.plist */,
 			);
 			path = "WK-WiFi-USB Extension";
-			sourceTree = "<group>";
-		};
-		BC872D0B1D2DFE5E00C1D993 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BC872D0C1D2DFE5E00C1D993 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BCCFBE691D1FA98600A981CB = {
 			isa = PBXGroup;
 			children = (
 				BCCFBE741D1FA98600A981CB /* WiFi-USB */,
-				BC872CFB1D2DFE5E00C1D993 /* WK-WiFi-USB */,
-				BC872D0A1D2DFE5E00C1D993 /* WK-WiFi-USB Extension */,
+				BCC3920D1D32EC1C00D889F6 /* WK-WiFi-USB */,
+				BCC3921C1D32EC1C00D889F6 /* WK-WiFi-USB Extension */,
 				BCCFBE731D1FA98600A981CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -178,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				BCCFBE721D1FA98600A981CB /* WiFi-USB.app */,
-				BC872CFA1D2DFE5E00C1D993 /* WK-WiFi-USB.app */,
-				BC872D061D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex */,
+				BCC3920C1D32EC1C00D889F6 /* WK-WiFi-USB.app */,
+				BCC392181D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,30 +210,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC872CF91D2DFE5E00C1D993 /* WK-WiFi-USB */ = {
+		BCC3920B1D32EC1C00D889F6 /* WK-WiFi-USB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC872D211D2DFE5E00C1D993 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */;
+			buildConfigurationList = BCC3922D1D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */;
 			buildPhases = (
-				BC872CF81D2DFE5E00C1D993 /* Resources */,
-				BC872D201D2DFE5E00C1D993 /* Embed App Extensions */,
+				BCC3920A1D32EC1C00D889F6 /* Resources */,
+				BCC3922C1D32EC1C00D889F6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BC872D091D2DFE5E00C1D993 /* PBXTargetDependency */,
+				BCC3921B1D32EC1C00D889F6 /* PBXTargetDependency */,
 			);
 			name = "WK-WiFi-USB";
 			productName = "WK-WiFi-USB";
-			productReference = BC872CFA1D2DFE5E00C1D993 /* WK-WiFi-USB.app */;
+			productReference = BCC3920C1D32EC1C00D889F6 /* WK-WiFi-USB.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		BC872D051D2DFE5E00C1D993 /* WK-WiFi-USB Extension */ = {
+		BCC392171D32EC1C00D889F6 /* WK-WiFi-USB Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC872D1D1D2DFE5E00C1D993 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB Extension" */;
+			buildConfigurationList = BCC392291D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB Extension" */;
 			buildPhases = (
-				BC872D021D2DFE5E00C1D993 /* Sources */,
-				BC872D031D2DFE5E00C1D993 /* Frameworks */,
-				BC872D041D2DFE5E00C1D993 /* Resources */,
+				BCC392141D32EC1C00D889F6 /* Sources */,
+				BCC392151D32EC1C00D889F6 /* Frameworks */,
+				BCC392161D32EC1C00D889F6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -258,7 +241,7 @@
 			);
 			name = "WK-WiFi-USB Extension";
 			productName = "WK-WiFi-USB Extension";
-			productReference = BC872D061D2DFE5E00C1D993 /* WK-WiFi-USB Extension.appex */;
+			productReference = BCC392181D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		BCCFBE711D1FA98600A981CB /* WiFi-USB */ = {
@@ -273,7 +256,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BC872D1B1D2DFE5E00C1D993 /* PBXTargetDependency */,
+				BCC392271D32EC1C00D889F6 /* PBXTargetDependency */,
 			);
 			name = "WiFi-USB";
 			productName = "WiFi-USB";
@@ -290,13 +273,12 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Brandon Groff";
 				TargetAttributes = {
-					BC872CF91D2DFE5E00C1D993 = {
+					BCC3920B1D32EC1C00D889F6 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 2246FUGJ54;
 					};
-					BC872D051D2DFE5E00C1D993 = {
+					BCC392171D32EC1C00D889F6 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2246FUGJ54;
 					};
 					BCCFBE711D1FA98600A981CB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -318,27 +300,27 @@
 			projectRoot = "";
 			targets = (
 				BCCFBE711D1FA98600A981CB /* WiFi-USB */,
-				BC872CF91D2DFE5E00C1D993 /* WK-WiFi-USB */,
-				BC872D051D2DFE5E00C1D993 /* WK-WiFi-USB Extension */,
+				BCC3920B1D32EC1C00D889F6 /* WK-WiFi-USB */,
+				BCC392171D32EC1C00D889F6 /* WK-WiFi-USB Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC872CF81D2DFE5E00C1D993 /* Resources */ = {
+		BCC3920A1D32EC1C00D889F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC872D001D2DFE5E00C1D993 /* Assets.xcassets in Resources */,
-				BC872CFE1D2DFE5E00C1D993 /* Interface.storyboard in Resources */,
+				BCC392121D32EC1C00D889F6 /* Assets.xcassets in Resources */,
+				BCC392101D32EC1C00D889F6 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC872D041D2DFE5E00C1D993 /* Resources */ = {
+		BCC392161D32EC1C00D889F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC872D181D2DFE5E00C1D993 /* Assets.xcassets in Resources */,
+				BCC392241D32EC1C00D889F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,18 +337,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC872D021D2DFE5E00C1D993 /* Sources */ = {
+		BCC392141D32EC1C00D889F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC872D101D2DFE5E00C1D993 /* ExtensionDelegate.swift in Sources */,
-				BC872D281D2DFF6E00C1D993 /* ColorPalette.swift in Sources */,
-				BC872D251D2DFF4800C1D993 /* WiFiUSBNetworker.swift in Sources */,
-				BC872D0E1D2DFE5E00C1D993 /* InterfaceController.swift in Sources */,
-				BC872D141D2DFE5E00C1D993 /* GlanceController.swift in Sources */,
-				BC872D341D2E24D900C1D993 /* ComplicationController.swift in Sources */,
-				BC872D2F1D2E088800C1D993 /* Reachability.swift in Sources */,
-				BC872D271D2DFF6A00C1D993 /* JsonResponse.swift in Sources */,
+				BCC392331D32EED400D889F6 /* Reachability.swift in Sources */,
+				BCC392201D32EC1C00D889F6 /* ExtensionDelegate.swift in Sources */,
+				BCC392321D32ED2000D889F6 /* WiFiUSBNetworker.swift in Sources */,
+				BCC392311D32ED1800D889F6 /* JsonResponse.swift in Sources */,
+				BCC3921E1D32EC1C00D889F6 /* InterfaceController.swift in Sources */,
+				BCC392301D32ED1500D889F6 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +365,6 @@
 				BCCFBE9A1D1FAA6200A981CB /* GlowingButton.swift in Sources */,
 				BCCFBE9B1D1FAA6200A981CB /* HyperlinkLabel.swift in Sources */,
 				BCCFBE761D1FA98600A981CB /* AppDelegate.swift in Sources */,
-				BC872D331D2E24D900C1D993 /* ComplicationController.swift in Sources */,
 				BCCFBE9C1D1FAA6200A981CB /* RadialGradientButton.swift in Sources */,
 				BCCFBE8F1D1FAA5800A981CB /* ColorPalette.swift in Sources */,
 			);
@@ -394,23 +373,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BC872D091D2DFE5E00C1D993 /* PBXTargetDependency */ = {
+		BCC3921B1D32EC1C00D889F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC872D051D2DFE5E00C1D993 /* WK-WiFi-USB Extension */;
-			targetProxy = BC872D081D2DFE5E00C1D993 /* PBXContainerItemProxy */;
+			target = BCC392171D32EC1C00D889F6 /* WK-WiFi-USB Extension */;
+			targetProxy = BCC3921A1D32EC1C00D889F6 /* PBXContainerItemProxy */;
 		};
-		BC872D1B1D2DFE5E00C1D993 /* PBXTargetDependency */ = {
+		BCC392271D32EC1C00D889F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC872CF91D2DFE5E00C1D993 /* WK-WiFi-USB */;
-			targetProxy = BC872D1A1D2DFE5E00C1D993 /* PBXContainerItemProxy */;
+			target = BCC3920B1D32EC1C00D889F6 /* WK-WiFi-USB */;
+			targetProxy = BCC392261D32EC1C00D889F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC872CFC1D2DFE5E00C1D993 /* Interface.storyboard */ = {
+		BCC3920E1D32EC1C00D889F6 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC872CFD1D2DFE5E00C1D993 /* Base */,
+				BCC3920F1D32EC1C00D889F6 /* Base */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -434,48 +413,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC872D1E1D2DFE5E00C1D993 /* Debug */ = {
+		BCC3922A1D32EC1C00D889F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WK-WiFi-USB Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brandon-Groff.WiFi-USB.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		BC872D1F1D2DFE5E00C1D993 /* Release */ = {
+		BCC3922B1D32EC1C00D889F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WK-WiFi-USB Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Brandon-Groff.WiFi-USB.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
-		BC872D221D2DFE5E00C1D993 /* Debug */ = {
+		BCC3922E1D32EC1C00D889F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -492,7 +460,7 @@
 			};
 			name = Debug;
 		};
-		BC872D231D2DFE5E00C1D993 /* Release */ = {
+		BCC3922F1D32EC1C00D889F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -630,19 +598,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC872D1D1D2DFE5E00C1D993 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB Extension" */ = {
+		BCC392291D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC872D1E1D2DFE5E00C1D993 /* Debug */,
-				BC872D1F1D2DFE5E00C1D993 /* Release */,
+				BCC3922A1D32EC1C00D889F6 /* Debug */,
+				BCC3922B1D32EC1C00D889F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		BC872D211D2DFE5E00C1D993 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */ = {
+		BCC3922D1D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC872D221D2DFE5E00C1D993 /* Debug */,
-				BC872D231D2DFE5E00C1D993 /* Release */,
+				BCC3922E1D32EC1C00D889F6 /* Debug */,
+				BCC3922F1D32EC1C00D889F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

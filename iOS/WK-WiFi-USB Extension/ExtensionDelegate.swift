@@ -2,7 +2,7 @@
 //  ExtensionDelegate.swift
 //  WK-WiFi-USB Extension
 //
-//  Created by Brandon Groff on 7/6/16.
+//  Created by Brandon Groff on 7/10/16.
 //  Copyright © 2016 Brandon Groff. All rights reserved.
 //
 
