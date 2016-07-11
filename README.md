@@ -1,4 +1,4 @@
-# WiFi-USB - DEV #
+# WiFi-USB #
 A wirelessly controllable USB power port
 
 _Firmware Version:_ 1.1
@@ -99,3 +99,5 @@ _Reboot the device_
 [_firmware_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/firmware/LICENSE) : GNU GPLv3
 
 [_iOS_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/iOS/LICENSE) : GNU GPLv3
+
+[_iOS_](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/web/LICENSE) : GNU GPLv3
