@@ -28,7 +28,7 @@
                     </items>
                     <menu key="menu" id="s5V-sT-2Pb">
                         <items>
-                            <menuItem title="Update Status" icon="shuffle" id="n9z-Ow-Epg">
+                            <menuItem title="Update Status" icon="repeat" id="n9z-Ow-Epg">
                                 <connections>
                                     <action selector="updateStatusTap" destination="AgC-eL-Hgc" id="ugh-kO-YmX"/>
                                 </connections>
