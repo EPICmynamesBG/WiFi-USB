@@ -23,6 +23,15 @@ _How can I use WiFi-USB?_
 
 Keep reading below for more on how to build your own WiFi-USB board, and instructions on how to install the firmware to get your device up and running.
 
+## Examples/Usage ##
+
+![WiFi-USB 1](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2189.JPG "WiFi-USB 1")
+![WiFi-USB 2](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2190.JPG "WiFi-USB 2")
+![WiFi-USB Watch 1](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2193.JPG "WiFi-USB Watch 1")
+![WiFi-USB Watch 2](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2194.JPG "WiFi-USB Watch 2")
+![WiFi-USB iOS 1](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2195.png "WiFi-USB iOS 1")
+![WiFi-USB iOS 2](https://github.com/EPICmynamesBG/WiFi-USB/blob/master/examples/IMG_2196.png "WiFi-USB iOS 2")
+
 ## Important Notes ##
 
 ** Never plug both the mini-USB power supply and the FTDI power at the same time. The hardware is not designed to handle this and will surely break **
