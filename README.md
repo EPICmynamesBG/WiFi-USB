@@ -1,7 +1,7 @@
 # WiFi-USB - DEV #
 A wirelessly controllable USB power port
 
-_Firmware Version:_ 1.1
+_Firmware Version:_ 1.2
 
 _iOS App Version_: 0.3
 
@@ -22,6 +22,12 @@ The inspiration for this project came from a general irritation with a USB power
 _How can I use WiFi-USB?_
 
 Keep reading below for more on how to build your own WiFi-USB board, and instructions on how to install the firmware to get your device up and running.
+
+## Recent Updates ##
+
+### Firmware v1.2 ###
+
+- Introducing Access Point Broadcasting fallback when client connect mode fails
 
 ## Hardware ##
 
