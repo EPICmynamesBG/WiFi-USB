@@ -1,7 +1,7 @@
 /**
 * WiFi-USB: a wirelessly controllable USB power port
 * Author: Brandon Groff
-* Version: 1.1
+* Version: 1.2
 * License: GNU GPLv3 (see LICENSE)
 */
 
@@ -15,8 +15,14 @@ void setup() {
     initialize();
     
     printMacAddress();
-    establishWirelessConnection();
-    printWirelessInfo();
+    if (establishWirelessConnection()){
+        printWirelessClientInfo();
+    } else {
+        Serial.print("\n\nConnecting to network "+String(SSID)+" failed. Going into Access Point mode...");
+        setupAccessPointMode();
+        printWirelessBroadcastInfo();
+    }
+    
     
     WebServer.begin();
     
@@ -60,7 +66,7 @@ void printMacAddress() {
 /**
  * Print info about the wireless connection.
  */
-void printWirelessInfo() {
+void printWirelessClientInfo() {
 
     Serial.print("LAN IPv4 address: ");
     Serial.println(WiFi.localIP());
@@ -69,14 +75,39 @@ void printWirelessInfo() {
     Serial.println(WiFi.RSSI());
 }
 
-void establishWirelessConnection() {
+bool establishWirelessConnection() {
     
-    Serial.print("\n\nEstablishing a wireless connection to " + String(SSID) + "\n");
+    Serial.print("\n\nAttempting to establish a wireless connection to " + String(SSID) + "\n");
     WiFi.begin(SSID, SSID_PASSWORD);
     
+    int connectAttempts = 0;
     while (WiFi.status() != WL_CONNECTED) {
+        if (connectAttempts > 10){
+            WiFi.disconnect(true);
+            return false;
+            break;
+        }
+        
         delay(1000);
         Serial.print(".");
+        connectAttempts += 1;
     }
+    
     Serial.println("Connected to " + String(SSID));
+    return true;
+}
+
+void setupAccessPointMode() {
+    Serial.print("\n\nConfiguring access point...\n");
+    WiFi.softAP(AP_SSID, AP_PASSWORD);
+}
+
+void printWirelessBroadcastInfo() {
+    Serial.print("Access Point IPv4 address: ");
+    Serial.println(WiFi.softAPIP());
+    
+    Serial.println("Access Point started.");
+    Serial.println("SSID: "+ String(AP_SSID));
+    Serial.println("Password: "+ String(AP_PASSWORD));
+    
 }
