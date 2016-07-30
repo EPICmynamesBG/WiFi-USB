@@ -15,7 +15,7 @@ WiFiUSBWebServer::WiFiUSBWebServer()
 
 void WiFiUSBWebServer::begin() {
     
-    mdns.begin(WEBSERVER_DOMAIN, WiFi.localIP());
+    MDNS.addService("http", "tcp", 80);
     
     SPIFFS.begin();
     

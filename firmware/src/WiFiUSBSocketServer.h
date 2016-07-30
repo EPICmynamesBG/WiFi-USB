@@ -8,48 +8,54 @@
 #pragma once
 
 #include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
+#include <WebSocketsServer.h>
 #include "USBPower.h"
 
 /**
-* Manage the web server
+* Manage the socket server
 */
-class WiFiUSBWebServer {
+class WiFiUSBSocketServer {
     
 public:
     
     /**
     * Create a class instance
     */
-    WiFiUSBWebServer();
+    WiFiUSBSocketServer();
     
     
     /**
-    * Start the WebServer
+    * Start the SocketServer
     *
     *
     */
     void begin ();
     
-    
     /**
-    * Handles incoming connections.
+    * Inherited from WebSocketsServer
     *
     * **Call within main loop
     */
-    void handleClients();
+    void loop();
     
 private:
+    
+    /**
+    * Needed by WebSocketsServer
+    */
+    static void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length);
+    
     
     void handleReboot();
     void handleStatus();
     void handleToggle();
     String buildJSON(int rawValue, String description);
     
-    ESP8266WebServer server;
+    MDNSResponder mdns;
+    WebSocketsServer server;
     USBPower powerManager;
     
 };
 
-extern WiFiUSBWebServer WebServer;
+extern WiFiUSBSocketServer SocketServer;
