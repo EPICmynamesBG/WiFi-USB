@@ -1,0 +1,12 @@
+PODS:
+  - SwiftWebSocket (2.6.2)
+
+DEPENDENCIES:
+  - SwiftWebSocket (~> 2.6)
+
+SPEC CHECKSUMS:
+  SwiftWebSocket: 2bb9dda75c87f64eaf9768131141857ca8611aac
+
+PODFILE CHECKSUM: f94e1726e1dd5759aaf5f93be7c250200787b4f8
+
+COCOAPODS: 1.0.1

@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
+class ViewController: UIViewController, WiFiUSBNetworkerDelegate, WiFiUSBWebSocketDelegate {
 
     /// Used to control backgrond color change timing
     private var backgroundTimer: NSTimer?
@@ -24,6 +24,8 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
     private var lastResponse: JsonResponse?
     /// object for sending async network requests and being notified on completion
     private var networker: WiFiUSBNetworker?
+    /// object for sending async network requests and being notified on completion
+    private var socket: WiFiUSBWebSocket!
     
     /// The UI Button that toggles WiFi-USB's power
     @IBOutlet weak var togglePowerButton: GlowingButton!
@@ -40,6 +42,9 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.socket = WiFiUSBWebSocket()
+        self.socket?.delegate = self
         
         self.networker = WiFiUSBNetworker()
         self.networker?.delegate = self
@@ -83,6 +88,7 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
                                                                           userInfo: nil,
                                                                           repeats: true)
         }
+        showNotification("Connecting Web Socket...")
         self.sendStatusSignal()
     }
     
@@ -167,7 +173,15 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
      Update WiFi-USB status, disable some buttons while requesting
      */
     private func sendStatusSignal() {
-        self.networker?.getStatus()
+        if (!self.socket.connected && !self.socket.connecting){
+            self.networker?.getStatus()
+        } else if (self.socket.connecting){
+            //do nothing
+        } else if (self.socket.connected && !self.socket.connecting) {
+            self.socket.getStatus()
+        } else {
+            print("wtf?")
+        }
         self.disableButtons()
     }
     
@@ -175,7 +189,15 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
      Reboot WiFi-USB, disable some buttons while requesting
      */
     private func sendRebootSignal() {
-        self.networker?.reboot()
+        if (!self.socket.connected || !self.socket.connecting){
+            self.networker?.reboot()
+        } else if (self.socket.connecting){
+            //do nothing
+        } else if (self.socket.connected && !self.socket.connecting) {
+            self.socket.reboot()
+        } else {
+            print("wtf?")
+        }
         self.disableButtons()
     }
     
@@ -183,7 +205,16 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
      Toggle WiFi-USB's port power, disable some buttons while requesting
      */
     private func sendToggleSignal() {
-        self.networker?.togglePower()
+        if (!self.socket.connected || !self.socket.connecting){
+            self.networker?.togglePower()
+        } else if (self.socket.connecting){
+            //do nothing
+        } else if (self.socket.connected && !self.socket.connecting) {
+            self.socket.togglePower()
+        } else {
+            print("wtf?")
+        }
+        
         self.disableButtons()
     }
     
@@ -271,6 +302,42 @@ class ViewController: UIViewController, WiFiUSBNetworkerDelegate {
         self.notificationLabel.text = "Reboot complete. Device is ONLINE"
         self.notificationLabel.showForDuration(3.0)
         self.enableButtons()
+    }
+    
+    /* ------ WiFiUSBWebSocketDelegate ------ */
+    
+    func SocketConnectionOpened() {
+        self.showNotification("Connected")
+    }
+    
+    func SocketConnectionClosed(reason: String) {
+        self.showNotification("Socket connection closed. Attempting to reconnect")
+    }
+    
+    func SocketError(error: ErrorType) {
+        print(error)
+        if (!self.socket.rebooting && !self.socket.connecting) {
+            self.showNotification("Socket Error")
+        }
+        
+        self.statusButton.enabled = true
+    }
+    
+    func SocketDataRecieved(response: JsonResponse) {
+        self.lastResponse = response
+        if (self.socket.rebooting) {
+            self.lastResponse = nil
+            self.notificationLabel.text = "Rebooting. Device is OFFLINE"
+            self.notificationLabel.hidden = false
+        } else {
+            self.showNotification(response.description!)
+            self.enableButtons()
+        }
+    }
+    
+    func SocketReconnectAborted() {
+        print("Aborted, fallback")
+        self.networker?.getStatus()
     }
     
     /**

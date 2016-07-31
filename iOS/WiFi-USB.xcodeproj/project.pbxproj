@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112C4213DEEC9EE82B75031C /* Pods_WK_WiFi_USB_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F68B8D3A47890343C0F8FF4 /* Pods_WK_WiFi_USB_Extension.framework */; };
+		217F6E9D65E234D51FCC1581 /* Pods_WK_WiFi_USB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D666DBAF9AC0367706BB1F40 /* Pods_WK_WiFi_USB.framework */; };
+		97FB7145FADD4270B4A70E07 /* Pods_WiFi_USB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0EDEFD1EC4A058BF3C95CB /* Pods_WiFi_USB.framework */; };
+		BCAB9B971D4E454C00686D6B /* WiFiUSBWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB9B961D4E454C00686D6B /* WiFiUSBWebSocket.swift */; };
 		BCC392101D32EC1C00D889F6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC3920E1D32EC1C00D889F6 /* Interface.storyboard */; };
 		BCC392121D32EC1C00D889F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC392111D32EC1C00D889F6 /* Assets.xcassets */; };
 		BCC392191D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BCC392181D32EC1C00D889F6 /* WK-WiFi-USB Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -79,6 +83,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0603B5A45D6249D99F9343D8 /* Pods-WK-WiFi-USB Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WK-WiFi-USB Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WK-WiFi-USB Extension/Pods-WK-WiFi-USB Extension.release.xcconfig"; sourceTree = "<group>"; };
+		2B0A3D23FA43523C509DEE99 /* Pods-WK-WiFi-USB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WK-WiFi-USB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WK-WiFi-USB/Pods-WK-WiFi-USB.debug.xcconfig"; sourceTree = "<group>"; };
+		2C0EDEFD1EC4A058BF3C95CB /* Pods_WiFi_USB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiFi_USB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		337C67E39B2251F30E540E79 /* Pods-WK-WiFi-USB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WK-WiFi-USB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WK-WiFi-USB/Pods-WK-WiFi-USB.release.xcconfig"; sourceTree = "<group>"; };
+		3F68B8D3A47890343C0F8FF4 /* Pods_WK_WiFi_USB_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WK_WiFi_USB_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A6C0F791CAFC7956409E9C /* Pods-WK-WiFi-USB Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WK-WiFi-USB Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WK-WiFi-USB Extension/Pods-WK-WiFi-USB Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		BCAB9B961D4E454C00686D6B /* WiFiUSBWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiFiUSBWebSocket.swift; sourceTree = "<group>"; };
 		BCC3920C1D32EC1C00D889F6 /* WK-WiFi-USB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WK-WiFi-USB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC3920F1D32EC1C00D889F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		BCC392111D32EC1C00D889F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,13 +117,25 @@
 		BCCFBE961D1FAA6200A981CB /* RadialGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientButton.swift; path = "UI Components/RadialGradientButton.swift"; sourceTree = "<group>"; };
 		BCCFBE971D1FAA6200A981CB /* RadialGradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientColor.swift; path = "UI Components/RadialGradientColor.swift"; sourceTree = "<group>"; };
 		BCCFBE981D1FAA6200A981CB /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIExtensions.swift; path = "UI Components/UIExtensions.swift"; sourceTree = "<group>"; };
+		BE8BD7F1CF4D816FE5E48776 /* Pods-WiFi-USB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFi-USB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiFi-USB/Pods-WiFi-USB.debug.xcconfig"; sourceTree = "<group>"; };
+		D666DBAF9AC0367706BB1F40 /* Pods_WK_WiFi_USB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WK_WiFi_USB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F019F5AEA678D25007055452 /* Pods-WiFi-USB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiFi-USB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiFi-USB/Pods-WiFi-USB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10EE8F057A1729698EA6B897 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				217F6E9D65E234D51FCC1581 /* Pods_WK_WiFi_USB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCC392151D32EC1C00D889F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112C4213DEEC9EE82B75031C /* Pods_WK_WiFi_USB_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,12 +143,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97FB7145FADD4270B4A70E07 /* Pods_WiFi_USB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AE90843DE39B611F56B85CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B0A3D23FA43523C509DEE99 /* Pods-WK-WiFi-USB.debug.xcconfig */,
+				337C67E39B2251F30E540E79 /* Pods-WK-WiFi-USB.release.xcconfig */,
+				40A6C0F791CAFC7956409E9C /* Pods-WK-WiFi-USB Extension.debug.xcconfig */,
+				0603B5A45D6249D99F9343D8 /* Pods-WK-WiFi-USB Extension.release.xcconfig */,
+				BE8BD7F1CF4D816FE5E48776 /* Pods-WiFi-USB.debug.xcconfig */,
+				F019F5AEA678D25007055452 /* Pods-WiFi-USB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BCC3920D1D32EC1C00D889F6 /* WK-WiFi-USB */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +191,8 @@
 				BCC3920D1D32EC1C00D889F6 /* WK-WiFi-USB */,
 				BCC3921C1D32EC1C00D889F6 /* WK-WiFi-USB Extension */,
 				BCCFBE731D1FA98600A981CB /* Products */,
+				3AE90843DE39B611F56B85CD /* Pods */,
+				D389C9AB1C8B19A384DABD0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +229,7 @@
 				BCCFBE8C1D1FAA5800A981CB /* JsonResponse.swift */,
 				BCCFBE8D1D1FAA5800A981CB /* Reachability.swift */,
 				BCCFBE8E1D1FAA5800A981CB /* WiFiUSBNetworker.swift */,
+				BCAB9B961D4E454C00686D6B /* WiFiUSBWebSocket.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +247,16 @@
 			name = "UI Components";
 			sourceTree = "<group>";
 		};
+		D389C9AB1C8B19A384DABD0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D666DBAF9AC0367706BB1F40 /* Pods_WK_WiFi_USB.framework */,
+				3F68B8D3A47890343C0F8FF4 /* Pods_WK_WiFi_USB_Extension.framework */,
+				2C0EDEFD1EC4A058BF3C95CB /* Pods_WiFi_USB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,8 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCC3922D1D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */;
 			buildPhases = (
+				53908BBBE29441F225081C8D /* [CP] Check Pods Manifest.lock */,
 				BCC3920A1D32EC1C00D889F6 /* Resources */,
 				BCC3922C1D32EC1C00D889F6 /* Embed App Extensions */,
+				10EE8F057A1729698EA6B897 /* Frameworks */,
+				DF4DBD5F1FA733B13043D419 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,9 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCC392291D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB Extension" */;
 			buildPhases = (
+				BD161A949658C3DC7D4D8A29 /* [CP] Check Pods Manifest.lock */,
 				BCC392141D32EC1C00D889F6 /* Sources */,
 				BCC392151D32EC1C00D889F6 /* Frameworks */,
 				BCC392161D32EC1C00D889F6 /* Resources */,
+				BFE743975FE292A9C403309E /* [CP] Embed Pods Frameworks */,
+				1CE21E455138C1FF1A6B47D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,10 +304,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCFBE841D1FA98600A981CB /* Build configuration list for PBXNativeTarget "WiFi-USB" */;
 			buildPhases = (
+				60D5409995F85A62D4DD57DE /* [CP] Check Pods Manifest.lock */,
 				BCCFBE6E1D1FA98600A981CB /* Sources */,
 				BCCFBE6F1D1FA98600A981CB /* Frameworks */,
 				BCCFBE701D1FA98600A981CB /* Resources */,
 				BC872D241D2DFE5E00C1D993 /* Embed Watch Content */,
+				7B0F455DDA970BC5E8C696FF /* [CP] Embed Pods Frameworks */,
+				799528C2B5A4F36CC40536A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,6 +395,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CE21E455138C1FF1A6B47D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WK-WiFi-USB Extension/Pods-WK-WiFi-USB Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53908BBBE29441F225081C8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60D5409995F85A62D4DD57DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		799528C2B5A4F36CC40536A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WiFi-USB/Pods-WiFi-USB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B0F455DDA970BC5E8C696FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WiFi-USB/Pods-WiFi-USB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD161A949658C3DC7D4D8A29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BFE743975FE292A9C403309E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WK-WiFi-USB Extension/Pods-WK-WiFi-USB Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF4DBD5F1FA733B13043D419 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WK-WiFi-USB/Pods-WK-WiFi-USB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCC392141D32EC1C00D889F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,6 +547,7 @@
 				BCCFBE9A1D1FAA6200A981CB /* GlowingButton.swift in Sources */,
 				BCCFBE9B1D1FAA6200A981CB /* HyperlinkLabel.swift in Sources */,
 				BCCFBE761D1FA98600A981CB /* AppDelegate.swift in Sources */,
+				BCAB9B971D4E454C00686D6B /* WiFiUSBWebSocket.swift in Sources */,
 				BCCFBE9C1D1FAA6200A981CB /* RadialGradientButton.swift in Sources */,
 				BCCFBE8F1D1FAA5800A981CB /* ColorPalette.swift in Sources */,
 			);
@@ -415,6 +598,7 @@
 /* Begin XCBuildConfiguration section */
 		BCC3922A1D32EC1C00D889F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A6C0F791CAFC7956409E9C /* Pods-WK-WiFi-USB Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				INFOPLIST_FILE = "WK-WiFi-USB Extension/Info.plist";
@@ -430,6 +614,7 @@
 		};
 		BCC3922B1D32EC1C00D889F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0603B5A45D6249D99F9343D8 /* Pods-WK-WiFi-USB Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				INFOPLIST_FILE = "WK-WiFi-USB Extension/Info.plist";
@@ -445,6 +630,7 @@
 		};
 		BCC3922E1D32EC1C00D889F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B0A3D23FA43523C509DEE99 /* Pods-WK-WiFi-USB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -462,6 +648,7 @@
 		};
 		BCC3922F1D32EC1C00D889F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 337C67E39B2251F30E540E79 /* Pods-WK-WiFi-USB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -566,6 +753,7 @@
 		};
 		BCCFBE851D1FA98600A981CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8BD7F1CF4D816FE5E48776 /* Pods-WiFi-USB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -582,6 +770,7 @@
 		};
 		BCCFBE861D1FA98600A981CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F019F5AEA678D25007055452 /* Pods-WiFi-USB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -605,6 +794,7 @@
 				BCC3922B1D32EC1C00D889F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCC3922D1D32EC1C00D889F6 /* Build configuration list for PBXNativeTarget "WK-WiFi-USB" */ = {
 			isa = XCConfigurationList;
@@ -613,6 +803,7 @@
 				BCC3922F1D32EC1C00D889F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCCFBE6D1D1FA98600A981CB /* Build configuration list for PBXProject "WiFi-USB" */ = {
 			isa = XCConfigurationList;
