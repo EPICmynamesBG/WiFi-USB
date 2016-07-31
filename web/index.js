@@ -28,6 +28,8 @@ function initWebSocket() {
     }
     ws.onmessage = function (evt) {
         var data = JSON.parse(evt.data);
+        console.log(evt);
+        console.log(data);
         setPowerButtonColor(data.on);
         showToast(data.description);
     }
@@ -48,15 +50,13 @@ function hideInfo() {
 }
 
 function setPowerButtonColor(powerIsOn) {
-    var button = $(".power-toggle");
+    var button = document.getElementById("power-toggle");
     if (powerIsOn) {
-        button.removeClass("power-off");
-        button.addClass("power-on");
-        button.attr("title", "Power is on");
+        button.classList = "power-toggle power-on";
+        button.setAttribute("title", "Power is on");
     } else {
-        button.removeClass("power-on");
-        button.addClass("power-off");
-        button.attr("title", "Power is off");
+        button.classList = "power-toggle power-off";
+        button.setAttribute("title", "Power is off");
     }
 }
 
