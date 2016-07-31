@@ -39,22 +39,26 @@ public:
     */
     void loop();
     
+    void relayMessage(String json);
+    
+protected:
+    
+    WebSocketsServer server;
+    
 private:
     
     /**
     * Needed by WebSocketsServer
     */
-    static void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length);
-    
+    static void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t leng);
     
     void handleReboot();
     void handleStatus();
     void handleToggle();
-    String buildJSON(int rawValue, String description);
+    
+    int prepareForSwitch(char * sent);
     
     MDNSResponder mdns;
-    WebSocketsServer server;
-    USBPower powerManager;
     
 };
 

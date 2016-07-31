@@ -8,6 +8,8 @@
 #include "WiFiUSBWebServer.h"
 #include "config.h"
 #include "FS.h"
+#include "helpers/JSON.h"
+#include "WiFiUSBSocketServer.h"
 
 WiFiUSBWebServer::WiFiUSBWebServer() 
     : server(80) { };
@@ -52,51 +54,39 @@ void WiFiUSBWebServer::handleClients() {
 
 void WiFiUSBWebServer::handleStatus() {
 
-    int raw = powerManager.rawValue();
-    String description = "";
+    String description;
     if (powerManager.isOn()) {    
         description = "USB device is powererd on";
     } else {
         description = "USB device is currently off";
     }
     
-    String json = buildJSON(raw, description);
+    String json = JSON::standardResponse(powerManager.isOn(), powerManager.rawValue(), description);
     server.send(200, "application/json", json);
 }
 
 void WiFiUSBWebServer::handleToggle() {
     powerManager.togglePower();
-    int raw = powerManager.rawValue();
-    String description = "";
     
+    String description;
     if (powerManager.isOn()) {    
         description = "USB device has been powered on";
     } else {
         description = "USB device has been powered off";
     }
     
-    String json = buildJSON(raw, description);
+    String json = JSON::standardResponse(powerManager.isOn(), powerManager.rawValue(), description);
+    SocketServer.relayMessage(json);
     server.send(200, "application/json", json);
 }
 
 void WiFiUSBWebServer::handleReboot() {
-    String json = "{\"description\": \"Rebooting NOW\"}";
+    
+    String json = JSON::standardResponse(powerManager.isOn(), powerManager.rawValue(), "Rebooting NOW");
+    SocketServer.relayMessage(json);
     server.send(200, "application/json", json);
     Serial.println("System is rebooting NOW");
     ESP.restart();
-}
-
-String WiFiUSBWebServer::buildJSON(int rawValue, String description) {
-    String json = "{";
-    String boolString = powerManager.isOn() ? "true" : "false";
-    
-    json.concat("\"on\":" + boolString + ", ");
-    json.concat("\"raw\":" + String(rawValue) + ", ");
-    json.concat("\"description\": \"" + description  + "\"");
-    
-    json.concat("}");
-    
-    return json;
 }
 
 WiFiUSBWebServer WebServer;

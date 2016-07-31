@@ -4,22 +4,37 @@
     <meta charset="utf-8" />
     <title>WebSocket Test</title>
     <script language="javascript" type="text/javascript">
-        var wsUri = "ws://wifiusb.local:8080";
+        var wsUri = "ws://wifiusb.local:8080/";
         var output;
+        var websocket;
 
         function init() {
             output = document.getElementById("output");
-            testWebSocket();
+            check();
         }
 
-        function testWebSocket() {
-            writeToScreen("Trying to connect...");
-            websocket = new WebSocket(wsUri);
+        function check() {
+            console.log("Checking web socket state...");
+            if (!websocket || websocket.readyState == 3) connect();
+            console.log("State is: " + websocket.readyState);
+        }
+
+        function connect() {
+            if (!websocket) {
+                writeToScreen("Trying to connect...");
+            } else {
+                websocket.close();
+                writeToScreen("Reconnecting..");
+            }
+            websocket = new WebSocket(wsUri, ["arduino"]);
+
             websocket.onopen = function (evt) {
-                onOpen(evt)
+                onOpen(evt);
             };
             websocket.onclose = function (evt) {
-                onClose(evt)
+                onClose(evt);
+                //force reconnect
+                check();
             };
             websocket.onmessage = function (evt) {
                 onMessage(evt)
@@ -31,7 +46,6 @@
 
         function onOpen(evt) {
             writeToScreen("CONNECTED");
-            doSend("WebSocket rocks");
         }
 
         function onClose(evt) {
@@ -39,11 +53,11 @@
         }
 
         function onMessage(evt) {
-            writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
-            websocket.close();
+            writeToScreen('<span style="color: blue;">SERVER SAYS: ' + evt.data + '</span>');
         }
 
         function onError(evt) {
+            console.log(evt);
             writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
         }
 
@@ -58,25 +72,50 @@
             pre.innerHTML = message;
             output.appendChild(pre);
         }
-        
+
         function sendMessage() {
             var mes = document.getElementById("message");
             var message = mes.value;
-            console.log(message);
-            writeToScreen("Sending message: " + message);
+            doSend(message);
             mes.value = "";
-            websocket.send(message);
         }
 
         window.addEventListener("load", init, false);
     </script>
+
+    <style>
+        header {
+            display: block;
+            position: absolute;
+            height: 100px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            
+        }
+        
+        #output {
+            height: calc(100% - 120px);
+            margin-top: 20px;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            overflow-y: auto;
+        }
+        
+    </style>
+
 </head>
 
 <body>
-    <h2>WebSocket Test</h2>
-    
-    <input type="text" id="message" placeholder="Message Text Here" value="" />
-    <button onclick="sendMessage()">Send</button>
+    <header>
+        <h2>WebSocket Test</h2>
+
+        <input type="text" id="message" placeholder="Message Text Here" value="" />
+        <button onclick="sendMessage()">Send</button>
+    </header>
 
     <div id="output"></div>
 

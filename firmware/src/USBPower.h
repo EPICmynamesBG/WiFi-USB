@@ -43,3 +43,5 @@ private:
     
     void turnOff();
 };
+
+extern USBPower powerManager;

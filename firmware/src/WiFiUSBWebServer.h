@@ -45,10 +45,8 @@ private:
     void handleReboot();
     void handleStatus();
     void handleToggle();
-    String buildJSON(int rawValue, String description);
     
     ESP8266WebServer server;
-    USBPower powerManager;
     
 };
 
