@@ -45,11 +45,8 @@ private:
     void handleReboot();
     void handleStatus();
     void handleToggle();
-    String buildJSON(int rawValue, String description);
     
-    MDNSResponder mdns;
     ESP8266WebServer server;
-    USBPower powerManager;
     
 };
 

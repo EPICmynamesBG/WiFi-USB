@@ -9,28 +9,34 @@
 #include "src/config.h"
 #include "src/USBPower.h"
 #include "src/WiFiUSBWebServer.h"
+#include "src/WiFiUSBSocketServer.h"
 
 void setup() {
     
     initialize();
     
     printMacAddress();
+    
     if (establishWirelessConnection()){
         printWirelessClientInfo();
+        MDNS.begin(WEBSERVER_DOMAIN, WiFi.localIP());
     } else {
         Serial.print("\n\nConnecting to network "+String(SSID)+" failed. Going into Access Point mode...");
         setupAccessPointMode();
         printWirelessBroadcastInfo();
+        MDNS.begin(WEBSERVER_DOMAIN, WiFi.softAPIP());
     }
     
     
     WebServer.begin();
-    
+    SocketServer.begin();
 }
 
 void loop() {
     
     WebServer.handleClients();
+    
+    SocketServer.loop();
     
 }
 

@@ -39,12 +39,12 @@ Files and instructions will be posted soon.
 
 ## Firmware Install ##
 
-
 1. Download and install the [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 2. Configure the IDE using the instructions [here](https://github.com/esp8266/arduino#installing-with-boards-manager)
-3. Download the zip/clone this repo
-4. In `config.h` update the SSID and SSID_PASSWORD variables to match your network configuration.
-5. Open `firmware.ino` and click upload in the Arduino IDE when the device is in develop mode
+3. In the Arduino IDE, go to Sketch > Include Library > Manage Libraries. Search 'WebSockets', and install the latest version of WebSockets by Marcus Sattler [GitHub](https://github.com/Links2004/arduinoWebSockets)
+4. Download the zip/clone this repo
+5. In `config.h` update the SSID and SSID_PASSWORD variables to match your network configuration.
+6. Open `firmware.ino` and click upload in the Arduino IDE when the device is in develop mode
 
 ## Web Install ##
 
