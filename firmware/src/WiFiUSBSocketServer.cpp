@@ -39,7 +39,7 @@ void WiFiUSBSocketServer::webSocketEvent(uint8_t num, WStype_t type, uint8_t * p
                 Serial.printf("[%u] Connected from %d.%d.%d.%d url: %s\n", num, ip[0], ip[1], ip[2], ip[3], payload);
 				
 				// send message to client
-                SocketServer.handleStatus();
+                SocketServer.handleStatus(num);
                 break;
             }
             
@@ -61,7 +61,7 @@ void WiFiUSBSocketServer::webSocketEvent(uint8_t num, WStype_t type, uint8_t * p
                         }
                     case 2: //status
                         {
-                            SocketServer.handleStatus();
+                            SocketServer.handleStatus(num);
                             break;
                         }
                     case 3: //reboot
@@ -122,7 +122,7 @@ void WiFiUSBSocketServer::relayMessage(String json) {
     server.broadcastTXT(json);
 }
 
-void WiFiUSBSocketServer::handleStatus() {
+void WiFiUSBSocketServer::handleStatus(uint8_t num) {
 
     String description;
     if (powerManager.isOn()) {    
@@ -132,7 +132,7 @@ void WiFiUSBSocketServer::handleStatus() {
     }
     
     String json = JSON::standardResponse(powerManager.isOn(),powerManager.rawValue(), description);
-    server.broadcastTXT(json);
+    server.sendTXT(num, json);
 }
 
 void WiFiUSBSocketServer::handleToggle() {
