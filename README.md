@@ -5,7 +5,7 @@ _Firmware Version:_ 1.1
 
 _iOS App Version_: 0.4
 
-_Web App Version_: 0.2
+_Web App Version_: 0.3
 
 ---
 

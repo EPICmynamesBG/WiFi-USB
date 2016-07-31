@@ -488,3 +488,7 @@ animation-direction: alternate;
 .info-overlay h5 {
     margin-bottom: 15px;
 }
+
+.hidden {
+    display: none !important;
+}
