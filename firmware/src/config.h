@@ -1,7 +1,7 @@
 /**
 * WiFi-USB: a wirelessly controllable USB power port
 * Author: Brandon Groff
-* Version: 1.2
+* Version: 2.0
 * License: GNU GPLv3 (see LICENSE)
 */
 #pragma once

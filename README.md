@@ -1,7 +1,7 @@
 # WiFi-USB #
 A wirelessly controllable USB power port
 
-_Firmware Version:_ 1.2
+_Firmware Version:_ 2.0
 
 _iOS App Version_: 0.4
 
@@ -28,6 +28,15 @@ Keep reading below for more on how to build your own WiFi-USB board, and instruc
 ** Never plug both the mini-USB power supply and the FTDI power at the same time. The hardware is not designed to handle this and will surely break **
 
 ## Recent Updates ##
+
+### Web v0.3 ###
+
+- Who needs jQuery? Not us!
+- Web Sockets = live data!
+
+### Firmware v2.0 ###
+
+- Web Socket connections are now possible, keeping all clients in sync
 
 ### Firmware v1.2 ###
 
