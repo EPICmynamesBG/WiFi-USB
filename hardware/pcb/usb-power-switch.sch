@@ -6597,7 +6597,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="S1" library="my-custom" deviceset="TACTILE-BUTTON-MJTP1230" device="" value="MJTP1230"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="U2" library="my-custom" deviceset="LD1117" device="" value="LD1117V33"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="ic-package" deviceset="DIL8" device="" value="TPS2024"/>
@@ -6608,7 +6608,7 @@ DIN A4, landscape with location and doc. field</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="J2" library="pinhead" deviceset="PINHD-1X6" device="" value="FTDI 3.3V"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="R1" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="R2" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="J1" library="pinhead" deviceset="PINHD-2X4" device="" value="ESP8266-01"/>
@@ -6636,7 +6636,7 @@ to put in programming mode</text>
 </instance>
 <instance part="S1" gate="G$1" x="182.88" y="137.16"/>
 <instance part="GND2" gate="1" x="195.58" y="134.62"/>
-<instance part="R2" gate="G$1" x="198.12" y="106.68" rot="R90"/>
+<instance part="R1" gate="G$1" x="198.12" y="106.68" rot="R90"/>
 <instance part="U2" gate="G$1" x="86.36" y="146.05"/>
 <instance part="GND3" gate="1" x="86.36" y="134.62"/>
 <instance part="U1" gate="G$1" x="170.18" y="53.34" rot="MR180"/>
@@ -6650,7 +6650,7 @@ to put in programming mode</text>
 <attribute name="VALUE" x="87.63" y="111.76" size="1.778" layer="96" rot="R180" align="bottom-right"/>
 </instance>
 <instance part="GND6" gate="1" x="83.82" y="88.9" rot="MR0"/>
-<instance part="R1" gate="G$1" x="162.56" y="68.58" rot="R90"/>
+<instance part="R2" gate="G$1" x="162.56" y="68.58" rot="R90"/>
 <instance part="P+2" gate="VCC" x="104.14" y="152.4" smashed="yes">
 <attribute name="VALUE" x="104.14" y="152.4" size="1.778" layer="96" rot="MR0" align="bottom-center"/>
 </instance>
@@ -6695,7 +6695,7 @@ to put in programming mode</text>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="198.12" y1="111.76" x2="198.12" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="P+4" gate="VCC" pin="VCC"/>
 </segment>
@@ -6717,7 +6717,7 @@ to put in programming mode</text>
 </segment>
 <segment>
 <pinref part="P+7" gate="VCC" pin="VCC"/>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="162.56" y1="76.2" x2="162.56" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -6788,7 +6788,7 @@ to put in programming mode</text>
 <label x="177.8" y="99.06" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="198.12" y1="101.6" x2="198.12" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="99.06" x2="195.58" y2="99.06" width="0.1524" layer="91"/>
 <label x="195.58" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -6837,7 +6837,7 @@ to put in programming mode</text>
 <segment>
 <pinref part="U1" gate="G$1" pin="4"/>
 <wire x1="162.56" y1="58.42" x2="157.48" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="63.5" x2="162.56" y2="58.42" width="0.1524" layer="91"/>
 <junction x="162.56" y="58.42"/>
 <label x="157.48" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
